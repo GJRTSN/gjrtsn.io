@@ -93,19 +93,13 @@ const ContactSection = () => {
         <h1 className="text-4xl font-bold mb-8">Ta kontakt!</h1>
         <div className="flex justify-center items-center space-x-4">
           <Link href="https://github.com/gjrtsn">
-            <p target="_blank" rel="noopener noreferrer">
-              <FaGithub size={64} />
-            </p>
+            <FaGithub size={64} />
           </Link>
           <Link href="https://linkedin.com/in/gjrtsn">
-            <p target="_blank" rel="noopener noreferrer">
-              <FaLinkedin size={64} />
-            </p>
+            <FaLinkedin size={64} />
           </Link>
           <Link href="mailto:josteingjertsen@gmail.com">
-            <p target="_blank" rel="noopener noreferrer">
-              <FaEnvelope size={64} />
-            </p>
+            <FaEnvelope size={64} />
           </Link>
         </div>
       </div>
