@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import Navigation from "./components/Navigation";
+import { useInView } from "react-intersection-observer";
 
 const WelcomeSection = () => {
   return (
@@ -25,12 +26,18 @@ const WelcomeSection = () => {
 };
 
 const AboutSection = () => {
+  const { ref, inView } = useInView({ threshold: 1.0, triggerOnce: true });
+
   return (
     <section
       id="about"
       className="bg-gray-900 min-h-screen flex items-center justify-center"
     >
-      <div className="text-center">
+      <div
+        className="text-center"
+        ref={ref}
+        style={{ opacity: inView ? 1 : 0, transition: "opacity 0.5s ease-out" }}
+      >
         <h1 className="text-4xl font-bold mb-4">Om meg</h1>
         <p className="text-lg">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -41,12 +48,17 @@ const AboutSection = () => {
 };
 
 const WorkSection = () => {
+  const { ref, inView } = useInView({ threshold: 1.0, triggerOnce: true });
   return (
     <section
       id="work"
       className="bg-gray-800 min-h-screen flex items-center justify-center"
     >
-      <div className="text-center">
+      <div
+        className="text-center"
+        ref={ref}
+        style={{ opacity: inView ? 1 : 0, transition: "opacity 0.5s ease-out" }}
+      >
         <h1 className="text-4xl font-bold mb-4">Arbeid</h1>
         <p className="text-lg">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -62,12 +74,17 @@ const WorkSection = () => {
 };
 
 const ContactSection = () => {
+  const { ref, inView } = useInView({ threshold: 1.0, triggerOnce: true });
   return (
     <section
       id="contact"
       className="min-h-screen flex items-center justify-center"
     >
-      <div className="text-center">
+      <div
+        className="text-center"
+        ref={ref}
+        style={{ opacity: inView ? 1 : 0, transition: "opacity 0.5s ease-out" }}
+      >
         <h1 className="text-4xl font-bold mb-8">Ta kontakt!</h1>
         <div className="flex justify-center items-center space-x-4">
           <Link href="https://github.com/gjrtsn">

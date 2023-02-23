@@ -31,28 +31,24 @@ const Navigation = () => {
     >
       <ul className="flex justify-between items-center w-full max-w-screen-xl mx-auto">
         <li>
-          <Link href={baseLink}>
-            <p className="font-bold text-lg">Jostein Gjertsen</p>
+          <Link href="#welcome">
+            <p className="font-bold text-lg text-white">Jostein Gjertsen</p>
           </Link>
         </li>
-        <li>
-          <Link href={`${baseLink}#about`}>
-            <p className="mx-4">Om</p>
+        <li className="flex justify-end flex-1 space-x-24">
+          <Link href="#about">
+            <p className="text-white">Om</p>
           </Link>
-        </li>
-        <li>
-          <Link href={`${baseLink}#work`}>
-            <p className="mx-4">Arbeid</p>
+          <Link href="#work">
+            <p className="text-white">Arbeid</p>
           </Link>
-        </li>
-        <li>
-          <Link href={`${baseLink}#contact`}>
-            <p className="mx-4">Kontakt</p>
+          <Link href="#contact">
+            <p className="text-white">Kontakt</p>
           </Link>
+          <button className=" border-solid border-2 border-rose-500 rounded-sm w-16 h-8">
+            <p className="text-rose-400">CV</p>
+          </button>
         </li>
-        <button className=" border-solid border-2 border-rose-500 rounded-sm w-16 h-8">
-          <p className="text-rose-400">CV</p>
-        </button>
       </ul>
     </nav>
   );
