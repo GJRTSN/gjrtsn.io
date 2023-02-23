@@ -25,7 +25,7 @@ const Navigation = () => {
         visible ? "" : "-translate-y-full"
       }`}
       style={{
-        background: "rgba(0, 0, 0, 0.3)",
+        background: "rgba(0, 0, 0, 0.1)",
         backdropFilter: "blur(5px)",
       }}
     >

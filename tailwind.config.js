@@ -5,8 +5,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         welcome:
-          "url('https://images.unsplash.com/photo-1544259342-306eccfec481?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')",
-        "footer-texture": "url('/img/footer-texture.png')",
+          "url('https://images.unsplash.com/photo-1472803828399-39d4ac53c6e5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1906&q=80')",
       },
     },
   },

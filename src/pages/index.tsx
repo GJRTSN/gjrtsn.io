@@ -34,13 +34,18 @@ const AboutSection = () => {
       className="bg-gray-900 min-h-screen flex items-center justify-center"
     >
       <div
-        className="text-center"
+        className="w-1/2 flex-col items-center justify-center text-center"
         ref={ref}
         style={{ opacity: inView ? 1 : 0, transition: "opacity 0.5s ease-out" }}
       >
         <h1 className="text-4xl font-bold mb-4">Om meg</h1>
-        <p className="text-lg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+        <p className="text-lg text-center">
+          Hei! Mitt navn er Jostein Gjertsen og jeg kommer opprinnelig fra
+          Tønsberg. For øyeblikket går jeg siste semester på en bachelorgrad som
+          jeg tar på Høgskolen i Østfold i Halden. Jeg ble først kjent med
+          webutvikling i 2021 da jeg hadde et kurs om det i studiet, og
+          interessen for dette økte og økte.
         </p>
       </div>
     </section>
