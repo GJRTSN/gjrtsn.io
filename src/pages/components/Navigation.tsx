@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { Link as ScrollLink } from "react-scroll";
 
 const Navigation = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
-  const baseLink = "/";
 
   const handleScroll = () => {
     const currentScrollPos = window.pageYOffset;
@@ -29,24 +29,52 @@ const Navigation = () => {
         backdropFilter: "blur(5px)",
       }}
     >
-      <ul className="flex justify-between items-center w-full max-w-screen-xl mx-auto">
+      <ul className="font-sen flex justify-between items-center w-full max-w-screen-xl ">
         <li>
-          <Link href="#welcome">
+          <ScrollLink
+            to="welcome"
+            smooth={true}
+            duration={500}
+            spy={true}
+            offset={-80}
+            className="text-white hover:text-rose-300 transition duration-300 ease-in-out"
+          >
             <p className="font-bold text-lg text-white">Jostein Gjertsen</p>
-          </Link>
+          </ScrollLink>
         </li>
-        <li className="flex justify-end flex-1 space-x-24">
-          <Link href="#about">
-            <p className="text-white">Om</p>
-          </Link>
-          <Link href="#work">
-            <p className="text-white">Arbeid</p>
-          </Link>
-          <Link href="#contact">
-            <p className="text-white">Kontakt</p>
-          </Link>
-          <button className=" border-solid border-2 border-rose-500 rounded-sm w-16 h-8">
-            <p className="text-rose-400">CV</p>
+        <li className="flex justify-end flex-1 items-center space-x-16">
+          <ScrollLink
+            to="about"
+            smooth={true}
+            duration={500}
+            spy={true}
+            offset={-80}
+            className="text-white hover:text-rose-300 transition duration-300 ease-in-out"
+          >
+            Om
+          </ScrollLink>
+          <ScrollLink
+            to="work"
+            smooth={true}
+            duration={500}
+            spy={true}
+            offset={-80}
+            className="text-white hover:text-rose-300 transition duration-300 ease-in-out"
+          >
+            Arbeid
+          </ScrollLink>
+          <ScrollLink
+            to="contact"
+            smooth={true}
+            duration={500}
+            spy={true}
+            offset={-80}
+            className="text-white hover:text-rose-300 transition duration-300 ease-in-out"
+          >
+            Kontakt
+          </ScrollLink>
+          <button className="bg-transparent border-solid border-2 border-rose-500 rounded-sm w-16 h-8   hover:bg-gradient-to-r from-rose-500 to-pink-500 transition duration-1000 ease-in-out">
+            <p className="text-white">CV</p>
           </button>
         </li>
       </ul>

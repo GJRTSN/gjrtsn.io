@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import Navigation from "./components/Navigation";
 import { useInView } from "react-intersection-observer";
+import WorkCard from "./components/WorkCard";
 
 const WelcomeSection = () => {
   return (
@@ -31,7 +32,7 @@ const AboutSection = () => {
   return (
     <section
       id="about"
-      className="bg-gray-900 min-h-screen flex items-center justify-center"
+      className="bg-gradient-to-b from-gray-900 to-indigo-900 min-h-screen flex items-center justify-center"
     >
       <div
         className="w-1/2 flex-col items-center justify-center text-center"
@@ -54,25 +55,45 @@ const AboutSection = () => {
 
 const WorkSection = () => {
   const { ref, inView } = useInView({ threshold: 1.0, triggerOnce: true });
+
   return (
-    <section
-      id="work"
-      className="bg-gray-800 min-h-screen flex items-center justify-center"
-    >
+    <section id="work" className="bg-indigo-900 min-h-full">
       <div
-        className="text-center"
-        ref={ref}
-        style={{ opacity: inView ? 1 : 0, transition: "opacity 0.5s ease-out" }}
+        className="h-full text-center w-1/2 flex-col justify-center mx-auto"
+        // ref={ref}
+        // style={{ opacity: inView ? 1 : 0, transition: "opacity 0.5s ease-out" }}
       >
-        <h1 className="text-4xl font-bold mb-4">Arbeid</h1>
+        <h1 className="text-4xl font-bold py-4">Arbeid</h1>
         <p className="text-lg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Her er noe av mitt arbeid jeg ønsker å fremheve.
         </p>
-        <Link href="/work">
-          <button className=" border-solid border-2 border-rose-500 rounded-sm w-16 h-8">
-            <p className="text-rose-400">Arkiv</p>
-          </button>
-        </Link>
+
+        <div className="flex flex-wrap justify-center h-full">
+          <WorkCard
+            imageSrc="/code.JPG"
+            title="Project 1"
+            subtitle="Subtitle 1"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies felis sapien, at imperdiet sapien lobortis vel. Nulla eget convallis tortor."
+            footnote="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            buttonLink="#"
+          />
+          <WorkCard
+            imageSrc="/code.JPG"
+            title="Project 2"
+            subtitle="Subtitle 2"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies felis sapien, at imperdiet sapien lobortis vel. Nulla eget convallis tortor."
+            footnote="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            buttonLink="#"
+          />
+          <WorkCard
+            imageSrc="/code.JPG"
+            title="Project 3"
+            subtitle="Subtitle 3"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies felis sapien, at imperdiet sapien lobortis vel. Nulla eget convallis tortor."
+            footnote="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            buttonLink="#"
+          />
+        </div>
       </div>
     </section>
   );
@@ -83,7 +104,7 @@ const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="min-h-screen flex items-center justify-center"
+      className="bg-gradient-to-b from-indigo-900 to-black min-h-screen flex items-center justify-center"
     >
       <div
         className="text-center"
