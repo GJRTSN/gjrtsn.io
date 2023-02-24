@@ -22,7 +22,7 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full h-16 px-4 py-2 flex justify-center items-center transition-all ${
+      className={`fixed z-10 top-0 left-0 w-full h-16 px-4 py-2 flex justify-center items-center transition-all ${
         visible ? "" : "-translate-y-full"
       }`}
       style={{
@@ -53,7 +53,7 @@ const Navigation = () => {
             />
           </Link>
         </li>
-        <li className="flex justify-end flex-1 items-center space-x-16">
+        <li className="flex justify-end flex-1 items-center font-bold space-x-16">
           <ScrollLink
             to="about"
             smooth={true}
