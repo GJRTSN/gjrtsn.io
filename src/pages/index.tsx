@@ -12,7 +12,7 @@ const WelcomeSection = () => {
       className="bg-welcome bg-cover bg-center bg-no-repeat bg-opacity-20 min-h-screen flex items-center justify-center"
     >
       <div className="text-center">
-        <h1 className="text-4xl font-bold mb-8">Jostein Gjertsen</h1>
+        <h1 className="text-4xl font-michroma mb-8">Jostein Gjertsen</h1>
         <p className="text-lg">
           Jeg er en front-end utvikler med en bachelorgrad i Digitale medier og
           design fra Høgskolen i Østfold.
@@ -113,9 +113,6 @@ const ContactSection = () => {
       >
         <h1 className="text-4xl font-bold mb-8">Ta kontakt!</h1>
         <div className="flex justify-center items-center space-x-4">
-          <Link href="https://github.com/gjrtsn">
-            <FaGithub size={64} />
-          </Link>
           <Link href="https://linkedin.com/in/gjrtsn">
             <FaLinkedin size={64} />
           </Link>

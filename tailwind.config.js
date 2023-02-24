@@ -5,6 +5,11 @@ module.exports = {
     extend: {
       fontFamily: {
         sen: ["Sen", "sans-serif"],
+        michroma: ["Michroma", "sans-serif"],
+        blinker: ["Blinker", "sans-serif"],
+        sunflower: ["Sunflower", "sans-serif"],
+        konit: ["Kanit", "sans-serif"],
+        iceland: ["Iceland", "cursive"],
       },
       backgroundImage: {
         welcome:

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { Link as ScrollLink } from "react-scroll";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const Navigation = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -39,8 +40,18 @@ const Navigation = () => {
             offset={-80}
             className="text-white hover:text-rose-300 transition duration-300 ease-in-out"
           >
-            <p className="font-bold text-lg text-white">Jostein Gjertsen</p>
+            <p className="cursor-pointer font-konit text-lg text-white hover:text-rose-500 transition duration-300 ease-in-out">
+              JOSTEIN GJERTSEN
+            </p>
           </ScrollLink>
+        </li>
+        <li>
+          <Link href="https://github.com/gjrtsn">
+            <FaGithub
+              className="mx-4  hover:text-rose-500 transition duration-300 ease-in-out"
+              size={28}
+            />
+          </Link>
         </li>
         <li className="flex justify-end flex-1 items-center space-x-16">
           <ScrollLink
@@ -49,7 +60,7 @@ const Navigation = () => {
             duration={500}
             spy={true}
             offset={-80}
-            className="text-white hover:text-rose-300 transition duration-300 ease-in-out"
+            className="cursor-pointer text-white hover:text-rose-300 transition duration-300 ease-in-out"
           >
             Om
           </ScrollLink>
@@ -59,7 +70,7 @@ const Navigation = () => {
             duration={500}
             spy={true}
             offset={-80}
-            className="text-white hover:text-rose-300 transition duration-300 ease-in-out"
+            className="cursor-pointer text-white hover:text-rose-300 transition duration-300 ease-in-out"
           >
             Arbeid
           </ScrollLink>
@@ -69,12 +80,14 @@ const Navigation = () => {
             duration={500}
             spy={true}
             offset={-80}
-            className="text-white hover:text-rose-300 transition duration-300 ease-in-out"
+            className="cursor-pointer text-white hover:text-rose-300 transition duration-300 ease-in-out"
           >
             Kontakt
           </ScrollLink>
-          <button className="bg-transparent border-solid border-2 border-rose-500 rounded-sm w-16 h-8   hover:bg-gradient-to-r from-rose-500 to-pink-500 transition duration-1000 ease-in-out">
-            <p className="text-white">CV</p>
+          <button className="group cursor-pointer bg-transparent border-solid border-2 border-rose-500 rounded-sm w-16 h-8   hover:bg-pink-500  transition duration-300 ease-in-out">
+            <p className="text-rose-500 group-hover:text-white transition duration-300 ease-in-out">
+              CV
+            </p>
           </button>
         </li>
       </ul>
