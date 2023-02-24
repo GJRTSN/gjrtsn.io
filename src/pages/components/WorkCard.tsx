@@ -40,7 +40,7 @@ const WorkCard: FC<WorkCardProps> = ({
       </div>
 
       <div className="flex flex-col justify-center w-full md:w-1/2 px-4 p-8">
-        <p className="absolute top-0 right-0 p-4 text-gray-400 font-bold">
+        <p className="absolute top-0 right-0 m-4 p-1 text-gray-400 font-bold border-gray-300 brder-solid border-2 rounded-xl">
           {subtitle}
         </p>
         <h2 className="text-2xl text-black font-bold my-2">{title}</h2>
