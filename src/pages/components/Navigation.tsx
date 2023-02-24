@@ -2,11 +2,18 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { Link as ScrollLink } from "react-scroll";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 
 const Navigation = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
+  const router = useRouter();
+  const linkProps = {
+    className:
+      "text-white hover:text-rose-300 transition duration-300 ease-in-out",
+  };
+
+  const isHome = router.pathname === "/";
 
   const handleScroll = () => {
     const currentScrollPos = window.pageYOffset;
@@ -32,18 +39,34 @@ const Navigation = () => {
     >
       <ul className="font-sen flex justify-between items-center w-full max-w-screen-xl ">
         <li>
+          {isHome ? (
+            <ScrollLink
+              to="welcome"
+              smooth={true}
+              duration={500}
+              spy={true}
+              {...linkProps}
+            >
+              <p className="cursor-pointer font-konit text-lg text-white hover:text-rose-500 transition duration-300 ease-in-out">
+                JOSTEIN GJERTSEN
+              </p>
+            </ScrollLink>
+          ) : (
+            <Link href="/">
+              <p className="cursor-pointer font-konit text-lg text-white hover:text-rose-500 transition duration-300 ease-in-out">
+                JOSTEIN GJERTSEN
+              </p>
+            </Link>
+          )}
           <ScrollLink
-            to="welcome"
+            href="/"
+            to="/"
             smooth={true}
             duration={500}
             spy={true}
             offset={-80}
             className="text-white hover:text-rose-300 transition duration-300 ease-in-out"
-          >
-            <p className="cursor-pointer font-konit text-lg text-white hover:text-rose-500 transition duration-300 ease-in-out">
-              JOSTEIN GJERTSEN
-            </p>
-          </ScrollLink>
+          ></ScrollLink>
         </li>
         <li>
           <Link href="https://github.com/gjrtsn">
@@ -54,36 +77,51 @@ const Navigation = () => {
           </Link>
         </li>
         <li className="flex justify-end flex-1 items-center font-bold space-x-16">
-          <ScrollLink
-            to="about"
-            smooth={true}
-            duration={500}
-            spy={true}
-            offset={-80}
-            className="cursor-pointer text-white hover:text-rose-300 transition duration-300 ease-in-out"
-          >
-            Om
-          </ScrollLink>
-          <ScrollLink
-            to="work"
-            smooth={true}
-            duration={500}
-            spy={true}
-            offset={-80}
-            className="cursor-pointer text-white hover:text-rose-300 transition duration-300 ease-in-out"
-          >
-            Arbeid
-          </ScrollLink>
-          <ScrollLink
-            to="contact"
-            smooth={true}
-            duration={500}
-            spy={true}
-            offset={-80}
-            className="cursor-pointer text-white hover:text-rose-300 transition duration-300 ease-in-out"
-          >
-            Kontakt
-          </ScrollLink>
+          {isHome ? (
+            <ScrollLink
+              to="about"
+              smooth={true}
+              duration={500}
+              spy={true}
+              {...linkProps}
+            >
+              Om meg
+            </ScrollLink>
+          ) : (
+            <Link href="/#about">
+              <p {...linkProps}>Om meg</p>
+            </Link>
+          )}
+          {isHome ? (
+            <ScrollLink
+              to="work"
+              smooth={true}
+              duration={500}
+              spy={true}
+              {...linkProps}
+            >
+              Arbeid
+            </ScrollLink>
+          ) : (
+            <Link href="/#work">
+              <p {...linkProps}>Arbeid</p>
+            </Link>
+          )}
+          {isHome ? (
+            <ScrollLink
+              to="contact"
+              smooth={true}
+              duration={500}
+              spy={true}
+              {...linkProps}
+            >
+              Kontakt
+            </ScrollLink>
+          ) : (
+            <Link href="/#contact">
+              <p {...linkProps}>Kontakt</p>
+            </Link>
+          )}
           <button className="group cursor-pointer bg-transparent border-solid border-2 border-rose-500 rounded-sm w-16 h-8   hover:bg-pink-500  transition duration-300 ease-in-out">
             <p className="text-rose-500 group-hover:text-white transition duration-300 ease-in-out">
               CV
