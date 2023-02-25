@@ -1,9 +1,13 @@
 import Head from "next/head";
 import Link from "next/link";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { GrContact } from "react-icons/gr";
 import Navigation from "./components/Navigation";
 import { useInView } from "react-intersection-observer";
 import WorkCard from "./components/WorkCard";
+import { useEffect, useState } from "react";
+import { getProjects } from "../lib/services/workService";
+import { AiOutlineMessage } from "react-icons/ai";
 
 const WelcomeSection = () => {
   return (
@@ -55,11 +59,20 @@ const AboutSection = () => {
 
 const WorkSection = () => {
   const { ref, inView } = useInView({ threshold: 1.0, triggerOnce: true });
+  const [works, setWorks] = useState([]);
+
+  useEffect(() => {
+    getProjects()
+      .then((data) => {
+        setWorks(data);
+      })
+      .catch((error) => {});
+  }, []);
 
   return (
     <section id="work" className="bg-indigo-900 min-h-full z-0">
       <div
-        className="h-full text-center w-1/2 flex-col justify-center mx-auto"
+        className="h-full w-1/2 flex-col justify-center mx-auto"
         // ref={ref}
         // style={{ opacity: inView ? 1 : 0, transition: "opacity 0.5s ease-out" }}
       >
@@ -69,36 +82,17 @@ const WorkSection = () => {
         </p>
 
         <div className="flex flex-wrap justify-center z-0 h-full">
-          <WorkCard
-            imageSrc="/code.JPG"
-            title="Project 1"
-            subtitle="Subtitle 1"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies felis sapien, at imperdiet sapien lobortis vel. Nulla eget convallis tortor."
-            footnote="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-            buttonLink="#"
-          />
-          <WorkCard
-            imageSrc="/code.JPG"
-            title="Project 2"
-            subtitle="Subtitle 2"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies felis sapien, at imperdiet sapien lobortis vel. Nulla eget convallis tortor."
-            footnote="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-            buttonLink="#"
-          />
-          <WorkCard
-            imageSrc="/code.JPG"
-            title="Project 3"
-            subtitle="Subtitle 3"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies felis sapien, at imperdiet sapien lobortis vel. Nulla eget convallis tortor."
-            footnote="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-            buttonLink="#"
-          />
+          {works.map((work) => (
+            <WorkCard key={work.slug} {...work} />
+          ))}
         </div>
-        <Link href="/work">
-          <button className="my-10 bg-gradient-to-r from-rose-500 to-pink-500 text-white py-4 px-10 rounded-md transition duration-300 ease-in-out hover:bg-blue-500 hover:shadow-2xl">
-            <p className="font-bold">Arkiv</p>
-          </button>
-        </Link>
+        <div className="text-center">
+          <Link href="/work">
+            <button className="my-10 bg-gradient-to-r from-rose-500 to-pink-500 text-white py-4 px-10 rounded-md transition duration-300 ease-in-out hover:bg-blue-500 hover:shadow-2xl">
+              <p className="font-bold">Arkiv</p>
+            </button>
+          </Link>
+        </div>
       </div>
     </section>
   );
@@ -106,6 +100,7 @@ const WorkSection = () => {
 
 const ContactSection = () => {
   const { ref, inView } = useInView({ threshold: 1.0, triggerOnce: true });
+
   return (
     <section
       id="contact"
@@ -116,7 +111,10 @@ const ContactSection = () => {
         ref={ref}
         style={{ opacity: inView ? 1 : 0, transition: "opacity 0.5s ease-out" }}
       >
-        <h1 className="text-4xl font-bold mb-8">Ta kontakt!</h1>
+        <div className="flex justify-center space-x-4">
+          <h1 className="text-4xl font-bold mb-16">Ta kontakt!</h1>
+          <AiOutlineMessage className="mt-1" size={32} />
+        </div>
         <div className="flex justify-center items-center space-x-4">
           <Link href="https://linkedin.com/in/gjrtsn">
             <FaLinkedin size={64} />
