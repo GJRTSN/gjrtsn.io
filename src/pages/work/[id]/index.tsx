@@ -42,11 +42,21 @@ const ProjectPage = ({ project }: Props) => {
         id="workPage"
         className="bg-gray-800 min-h-screen flex items-center justify-center"
       >
-        <div id="workContainer" className="mt-32 w-1/2  max-w-6xl">
-          <h1 className="text-4xl font-bold mb-4">{title}</h1>
-          <div id="projectInfo" className="flex justify-between">
+        <div
+          id="workContainer"
+          className="mt-32 w-1/2  max-w-6xl mobile:w-screen"
+        >
+          <h1 className="text-4xl font-bold mb-4 mobile:text-center">
+            {title}
+          </h1>
+          <div
+            id="projectInfo"
+            className="flex justify-between mobile:flex-col text-center items-center "
+          >
             <h2>Kategori:</h2>
-            <p className=" text-gray-500 mb-4">{category}</p>
+            <p className=" text-gray-500 mb-4">
+              {category ? category.toUpperCase() : "KATEGORI"}
+            </p>
             <h2>Verktøy:</h2>
             <p className=" text-gray-500 mb-4">{tech.join(", ")}</p>
             <h2>Dato:</h2>
@@ -58,23 +68,23 @@ const ProjectPage = ({ project }: Props) => {
             </Link>
             <Link href={git}>
               <FaGithub
-                className="hover:text-rose-500 transition duration-300 ease-in-out"
+                className="hover:text-rose-500 transition duration-300 ease-in-out mobile:mt-4"
                 size={28}
               />
             </Link>
           </div>
           <div id="article">
-            <p id="blogText1" className="text-lg my-8">
+            <p id="blogText1" className="text-lg my-8 mobile:px-4">
               {blogtext1}
             </p>
             <img src={blogpic1} alt={`${title} thumbnail`} />
 
-            <p id="blogText2" className="text-lg my-8">
+            <p id="blogText2" className="text-lg my-8 mobile:px-4">
               {blogtext2}
             </p>
             <img src={blogpic2} alt={`${title} thumbnail`} />
 
-            <p id="blogText3" className="text-lg mt-8 mb-64">
+            <p id="blogText3" className="text-lg mt-8 mb-64 mobile:px-4">
               {blogtext3}
             </p>
           </div>

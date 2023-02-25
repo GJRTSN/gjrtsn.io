@@ -19,7 +19,7 @@ const WorkCard: FC<WorkCardProps> = ({
         flip ? "md:flex-row-reverse" : "md:flex-row"
       }`}
     >
-      <div className="relative h-full w-full md:w-1/2 mb-8 md:mb-0">
+      <div className="relative h-full w-full md:w-1/2 mb-8 md:mb-0 mobile:hidden">
         <div className="relative h-full">
           <Image
             className="w-full h-full object-cover object-center"
@@ -34,9 +34,15 @@ const WorkCard: FC<WorkCardProps> = ({
         </div>
       </div>
 
-      <div className="flex flex-col justify-center w-full md:w-1/2 px-4 p-8">
+      <div
+        className={`flex flex-col justify-center w-full ${
+          flip ? "md:pl-8" : "md:pr-8"
+        } md:w-1/2 px-4 p-8 md:order-2 ${flip ? "md:order-1" : "md:order-2"}`}
+      >
         <Link href={`/work/${slug}`}>
-          <h2 className="text-2xl text-black font-bold my-2">{title}</h2>
+          <h2 className="text-2xl text-black font-bold my-2 mobile:text-center">
+            {title}
+          </h2>
         </Link>
         <p className="text-lg text-gray-700 mb-4">{description}</p>
         <p className="text-sm text-gray-500 mb-4">
@@ -51,8 +57,8 @@ const WorkCard: FC<WorkCardProps> = ({
           </Link>
         </div>
         <p
-          className={`absolute ${
-            flip ? "top-0 left-0 ml-96 mt-4" : "top-0 right-0 m-4"
+          className={`absolute mobile:hidden ${
+            flip ? "top-0 left-42 ml-36 mt-4" : "top-0 right-0 m-4"
           } px-1 text-gray-400 border-gray-300 border-solid border-2 rounded-md text-sm font-konit`}
         >
           {category ? category.toUpperCase() : "KATEGORI"}

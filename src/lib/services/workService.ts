@@ -1,6 +1,6 @@
 import client from "../client";
 import { GetStaticPaths, GetStaticProps } from "next";
-import { Project, Props } from "../../types/types";
+import { project, Props } from "../../types/types";
 
 export const getProjects = async () => {
   try {

@@ -37,8 +37,8 @@ const Navigation = () => {
         backdropFilter: "blur(5px)",
       }}
     >
-      <ul className="font-sen flex justify-between items-center w-full max-w-screen-xl ">
-        <li>
+      <ul className="font-sen flex justify-between items-center w-3/5 max-w-screen-xl mobile:w-screen ">
+        <li className="mobile:hidden">
           {isHome ? (
             <ScrollLink
               to="welcome"
@@ -68,7 +68,7 @@ const Navigation = () => {
             className="text-white hover:text-rose-300 transition duration-300 ease-in-out"
           ></ScrollLink>
         </li>
-        <li>
+        <li className="mobile:hidden">
           <Link href="https://github.com/gjrtsn">
             <FaGithub
               className="mx-4  hover:text-rose-500 transition duration-300 ease-in-out"
@@ -76,7 +76,7 @@ const Navigation = () => {
             />
           </Link>
         </li>
-        <li className="flex justify-end flex-1 items-center font-bold space-x-16">
+        <li className="flex justify-end flex-1 items-center font-bold space-x-16 mobile:space-x-12 justify-center">
           {isHome ? (
             <ScrollLink
               to="about"
@@ -122,7 +122,10 @@ const Navigation = () => {
               <p {...linkProps}>Kontakt</p>
             </Link>
           )}
-          <button className="group cursor-pointer bg-transparent border-solid border-2 border-rose-500 rounded-sm w-16 h-8   hover:bg-pink-500  transition duration-300 ease-in-out">
+          <button
+            className="group cursor-pointer bg-transparent border-solid border-2 border-rose-500 rounded-sm w-16 h-8  
+           hover:bg-pink-500  transition duration-300 ease-in-out mobile:hidden"
+          >
             <p className="text-rose-500 group-hover:text-white transition duration-300 ease-in-out">
               CV
             </p>

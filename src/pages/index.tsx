@@ -16,7 +16,7 @@ const WelcomeSection = () => {
       id="welcome"
       className="bg-welcome bg-cover bg-center bg-no-repeat bg-opacity-20 min-h-screen flex items-center justify-center"
     >
-      <div className=" max-w-6xl">
+      <div className=" max-w-6xl mobile:px-4">
         <h1 className="text-4xl font-michroma mb-8">Jostein Gjertsen</h1>
         <p className="text-lg">
           Jeg er en front-end utvikler med en bachelorgrad i Digitale medier og
@@ -40,22 +40,22 @@ const AboutSection = () => {
       className="bg-gradient-to-b from-gray-900 to-indigo-900 min-h-screen flex items-center justify-center"
     >
       <div
-        className="w-1/2  max-w-6xl flex-col items-center justify-center "
+        className="w-1/2  max-w-6xl flex-col items-center justify-center mobile:w-screen px-4"
         ref={ref}
         style={{ opacity: inView ? 1 : 0, transition: "opacity 0.5s ease-out" }}
       >
         <h1 className="text-4xl font-bold mb-4">Om meg</h1>
         <div className="flex">
-          <p className="text-lg w-3/5">
+          <p className="text-lg w-3/5 mobile:w-full">
             Hei! Mitt navn er Jostein Gjertsen og jeg kommer opprinnelig fra
             Tønsberg. For øyeblikket går jeg siste semester på en bachelorgrad
             som jeg tar på Høgskolen i Østfold i Halden. Jeg ble først kjent med
             webutvikling i 2021 da jeg hadde et kurs om det i studiet, og
             interessen for dette økte og økte.
           </p>
-          <div className="w-2/5 px-12">
+          <div className="w-2/5 px-12 mobile:hidden">
             <Image
-              className="shadow-2xl"
+              className="shadow-2xl "
               src="https://media.licdn.com/dms/image/C4D03AQFSXygKgD6kbA/profile-displayphoto-shrink_800_800/0/1596528788276?e=1682553600&v=beta&t=C9OmWsGh9VYr1t6_psD4Z69seAba7KNmDg29cqlOIww"
               alt="Picture of the author"
               width={1000}
@@ -83,7 +83,7 @@ const WorkSection = () => {
 
   return (
     <section id="work" className="bg-indigo-900 min-h-full z-0">
-      <div className="h-full w-1/2 max-w-6xl flex-col justify-center mx-auto">
+      <div className="h-full w-1/2 max-w-6xl flex-col justify-center mx-auto mobile:w-screen px-2">
         <h1 className="text-4xl font-bold py-4">Arbeid</h1>
         <p className="text-lg">
           Her er noe av mitt arbeid jeg ønsker å fremheve.
