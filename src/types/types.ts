@@ -1,4 +1,4 @@
-export type Project = {
+export type project = {
   thumbnail: string;
   title: string;
   category: string;
@@ -10,7 +10,7 @@ export type Project = {
     };
   }[];
   slug: string;
-  date: string;
+  date: Date;
   demo: string;
   git: string;
   blogtext1: string;
@@ -21,5 +21,5 @@ export type Project = {
 };
 
 export type Props = {
-  project: Project;
+  project: project;
 };

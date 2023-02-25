@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
 import { FaLinkedin, FaEnvelope } from "react-icons/fa";
-import { GrContact } from "react-icons/gr";
 import Navigation from "./components/Navigation";
 import { useInView } from "react-intersection-observer";
 import WorkCard from "./components/WorkCard";
@@ -9,6 +8,7 @@ import { useEffect, useState } from "react";
 import { getProjects } from "../lib/services/workService";
 import { AiOutlineMessage } from "react-icons/ai";
 import Image from "next/image";
+import { project, Props } from "../types/types";
 
 const WelcomeSection = () => {
   return (
@@ -74,9 +74,9 @@ const WorkSection = () => {
 
   useEffect(() => {
     getProjects()
-      .then((data) => {
-        data.sort((a, b) => new Date(b.date) - new Date(a.date)); // sort by date in descending order
-        setWorks(data.slice(0, 3)); // limit to first 3 elements
+      .then((data: project[]) => {
+        // data.sort((a, b) => new Date(b.date) - new Date(a.date));
+        setWorks(data.slice(0, 3));
       })
       .catch((error) => {});
   }, []);

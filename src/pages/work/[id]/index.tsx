@@ -4,7 +4,7 @@ import {
   getProjectById,
   getAllProjectIds,
 } from "../../../lib/services/workService";
-import { Props, Project } from "../../../types/types";
+import { Props, project } from "../../../types/types";
 import Navigation from "../../components/Navigation";
 import { FaGithub } from "react-icons/fa";
 import Link from "next/link";

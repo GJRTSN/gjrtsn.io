@@ -10,7 +10,7 @@ export const getProjects = async () => {
       "category": category,
       "description": description,
       "tech": tech[]->tech,
-      "slug": "/" + slug
+      "slug": slug
     }`);
 
     return data;
