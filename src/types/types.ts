@@ -3,7 +3,7 @@ export type project = {
   title: string;
   category: string;
   description: string;
-  tech: string[];
+  tech?: string[];
   images?: {
     asset: {
       url: string;
@@ -22,4 +22,14 @@ export type project = {
 
 export type Props = {
   project: project;
+};
+
+export type WorkCardProps = {
+  thumbnail: string;
+  title: string;
+  category: string;
+  description: string;
+  tech?: string[]; // VS Code;
+  slug: string;
+  flip: boolean;
 };

@@ -1,16 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
-
-type WorkCardProps = {
-  thumbnail: any;
-  title: string;
-  category: string;
-  description: string;
-  tech: string[];
-  slug: string;
-  flip: boolean;
-};
+import { WorkCardProps } from "../../types/types";
 
 const WorkCard: FC<WorkCardProps> = ({
   thumbnail,
