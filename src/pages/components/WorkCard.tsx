@@ -40,7 +40,7 @@ const WorkCard: FC<WorkCardProps> = ({
         </Link>
         <p className="text-lg text-gray-700 mb-4">{description}</p>
         <p className="text-sm text-gray-500 mb-4">
-          {tech ? tech.join(", ") : ""}
+          {tech ? tech.join(", ") : "VS Code"}
         </p>
 
         <div className="flex justify-center">
@@ -55,7 +55,7 @@ const WorkCard: FC<WorkCardProps> = ({
             flip ? "top-0 left-0 ml-96 mt-4" : "top-0 right-0 m-4"
           } px-1 text-gray-400 border-gray-300 border-solid border-2 rounded-md text-sm font-konit`}
         >
-          {category.toUpperCase()}
+          {category ? category.toUpperCase() : "KATEGORI"}
         </p>
       </div>
     </div>
