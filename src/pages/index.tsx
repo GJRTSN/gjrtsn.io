@@ -53,13 +53,15 @@ const AboutSection = () => {
             webutvikling i 2021 da jeg hadde et kurs om det i studiet, og
             interessen for dette økte og økte.
           </p>
-          <Image
-            className="w-2/5 px-12"
-            src="https://media.licdn.com/dms/image/C4D03AQFSXygKgD6kbA/profile-displayphoto-shrink_800_800/0/1596528788276?e=1682553600&v=beta&t=C9OmWsGh9VYr1t6_psD4Z69seAba7KNmDg29cqlOIww"
-            alt="Picture of the author"
-            width={250}
-            height={250}
-          />
+          <div className="w-2/5 px-12">
+            <Image
+              className="shadow-2xl"
+              src="https://media.licdn.com/dms/image/C4D03AQFSXygKgD6kbA/profile-displayphoto-shrink_800_800/0/1596528788276?e=1682553600&v=beta&t=C9OmWsGh9VYr1t6_psD4Z69seAba7KNmDg29cqlOIww"
+              alt="Picture of the author"
+              width={1000}
+              height={1000}
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -81,19 +83,20 @@ const WorkSection = () => {
 
   return (
     <section id="work" className="bg-indigo-900 min-h-full z-0">
-      <div
-        className="h-full w-1/2  max-w-6xl flex-col justify-center mx-auto"
-        // ref={ref}
-        // style={{ opacity: inView ? 1 : 0, transition: "opacity 0.5s ease-out" }}
-      >
+      <div className="h-full w-1/2 max-w-6xl flex-col justify-center mx-auto">
         <h1 className="text-4xl font-bold py-4">Arbeid</h1>
         <p className="text-lg">
           Her er noe av mitt arbeid jeg ønsker å fremheve.
         </p>
 
         <div className="flex flex-wrap justify-center z-0 h-full">
-          {works.map((work) => (
-            <WorkCard key={work.slug} {...work} />
+          {works.map((work, index) => (
+            <WorkCard
+              key={work.slug}
+              {...work}
+              flip={index % 2 !== 0}
+              index={index}
+            />
           ))}
         </div>
         <div className="text-center">

@@ -9,6 +9,7 @@ type WorkCardProps = {
   description: string;
   tech: string[];
   slug: string;
+  flip: boolean;
 };
 
 const WorkCard: FC<WorkCardProps> = ({
@@ -18,11 +19,14 @@ const WorkCard: FC<WorkCardProps> = ({
   description,
   tech,
   slug,
+  flip,
 }) => {
   return (
     <div
       id="maincard"
-      className="group flex flex-col md:flex-row bg-white rounded-md  w-full max-w-6xl my-4 transition-all duration-500 hover:shadow-2xl hover:shadow-white/20 relative"
+      className={`group flex flex-col md:flex-row bg-white rounded-md w-full max-w-6xl my-4 transition-all duration-500 hover:shadow-2xl hover:shadow-white/20 relative ${
+        flip ? "md:flex-row-reverse" : "md:flex-row"
+      }`}
     >
       <div className="relative h-full w-full md:w-1/2 mb-8 md:mb-0">
         <div className="relative h-full">
@@ -40,10 +44,6 @@ const WorkCard: FC<WorkCardProps> = ({
       </div>
 
       <div className="flex flex-col justify-center w-full md:w-1/2 px-4 p-8">
-        <p className="absolute top-0 right-0 m-4 px-1 text-gray-400 border-gray-300 border-solid border-2 rounded-md text-sm font-konit">
-          {category.toUpperCase()}
-        </p>
-
         <Link href={`/work/${slug}`}>
           <h2 className="text-2xl text-black font-bold my-2">{title}</h2>
         </Link>
@@ -56,6 +56,13 @@ const WorkCard: FC<WorkCardProps> = ({
             </button>
           </Link>
         </div>
+        <p
+          className={`absolute ${
+            flip ? "top-0 left-0 ml-96 mt-4" : "top-0 right-0 m-4"
+          } px-1 text-gray-400 border-gray-300 border-solid border-2 rounded-md text-sm font-konit`}
+        >
+          {category.toUpperCase()}
+        </p>
       </div>
     </div>
   );
