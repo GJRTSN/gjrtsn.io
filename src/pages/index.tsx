@@ -15,7 +15,7 @@ const WelcomeSection = () => {
       id="welcome"
       className="bg-welcome bg-cover bg-center bg-no-repeat bg-opacity-20 min-h-screen flex items-center justify-center"
     >
-      <div className="text-center">
+      <div className="">
         <h1 className="text-4xl font-michroma mb-8">Jostein Gjertsen</h1>
         <p className="text-lg">
           Jeg er en front-end utvikler med en bachelorgrad i Digitale medier og
@@ -39,13 +39,13 @@ const AboutSection = () => {
       className="bg-gradient-to-b from-gray-900 to-indigo-900 min-h-screen flex items-center justify-center"
     >
       <div
-        className="w-1/2 flex-col items-center justify-center text-center"
+        className="w-1/2 flex-col items-center justify-center "
         ref={ref}
         style={{ opacity: inView ? 1 : 0, transition: "opacity 0.5s ease-out" }}
       >
         <h1 className="text-4xl font-bold mb-4">Om meg</h1>
 
-        <p className="text-lg text-center">
+        <p className="text-lg ">
           Hei! Mitt navn er Jostein Gjertsen og jeg kommer opprinnelig fra
           Tønsberg. For øyeblikket går jeg siste semester på en bachelorgrad som
           jeg tar på Høgskolen i Østfold i Halden. Jeg ble først kjent med
@@ -64,7 +64,8 @@ const WorkSection = () => {
   useEffect(() => {
     getProjects()
       .then((data) => {
-        setWorks(data);
+        data.sort((a, b) => new Date(b.date) - new Date(a.date)); // sort by date in descending order
+        setWorks(data.slice(0, 3)); // limit to first 3 elements
       })
       .catch((error) => {});
   }, []);
