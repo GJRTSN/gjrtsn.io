@@ -39,7 +39,10 @@ const WorkCard: FC<WorkCardProps> = ({
           <h2 className="text-2xl text-black font-bold my-2">{title}</h2>
         </Link>
         <p className="text-lg text-gray-700 mb-4">{description}</p>
-        <p className="text-sm text-gray-500 mb-4">{tech.join(", ")}</p>
+        <p className="text-sm text-gray-500 mb-4">
+          {tech ? tech.join(", ") : ""}
+        </p>
+
         <div className="flex justify-center">
           <Link href={`/work/${slug}`}>
             <button className="mt-4 bg-gradient-to-r from-rose-500 to-pink-500 text-white py-2 px-4 rounded-md transition duration-300 ease-in-out hover:bg-blue-500 !important">
