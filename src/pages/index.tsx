@@ -8,6 +8,7 @@ import WorkCard from "./components/WorkCard";
 import { useEffect, useState } from "react";
 import { getProjects } from "../lib/services/workService";
 import { AiOutlineMessage } from "react-icons/ai";
+import Image from "next/image";
 
 const WelcomeSection = () => {
   return (
@@ -44,14 +45,22 @@ const AboutSection = () => {
         style={{ opacity: inView ? 1 : 0, transition: "opacity 0.5s ease-out" }}
       >
         <h1 className="text-4xl font-bold mb-4">Om meg</h1>
-
-        <p className="text-lg ">
-          Hei! Mitt navn er Jostein Gjertsen og jeg kommer opprinnelig fra
-          Tønsberg. For øyeblikket går jeg siste semester på en bachelorgrad som
-          jeg tar på Høgskolen i Østfold i Halden. Jeg ble først kjent med
-          webutvikling i 2021 da jeg hadde et kurs om det i studiet, og
-          interessen for dette økte og økte.
-        </p>
+        <div className="flex">
+          <p className="text-lg w-3/5">
+            Hei! Mitt navn er Jostein Gjertsen og jeg kommer opprinnelig fra
+            Tønsberg. For øyeblikket går jeg siste semester på en bachelorgrad
+            som jeg tar på Høgskolen i Østfold i Halden. Jeg ble først kjent med
+            webutvikling i 2021 da jeg hadde et kurs om det i studiet, og
+            interessen for dette økte og økte.
+          </p>
+          <Image
+            className="w-2/5 px-12"
+            src="https://media.licdn.com/dms/image/C4D03AQFSXygKgD6kbA/profile-displayphoto-shrink_800_800/0/1596528788276?e=1682553600&v=beta&t=C9OmWsGh9VYr1t6_psD4Z69seAba7KNmDg29cqlOIww"
+            alt="Picture of the author"
+            width={250}
+            height={250}
+          />
+        </div>
       </div>
     </section>
   );
