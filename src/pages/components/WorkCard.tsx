@@ -22,7 +22,7 @@ const WorkCard: FC<WorkCardProps> = ({
   return (
     <div
       id="maincard"
-      className="group flex flex-col md:flex-row bg-white rounded-md  w-full my-4 transition-all duration-500 hover:shadow-2xl hover:shadow-white/20 relative"
+      className="group flex flex-col md:flex-row bg-white rounded-md  w-full max-w-6xl my-4 transition-all duration-500 hover:shadow-2xl hover:shadow-white/20 relative"
     >
       <div className="relative h-full w-full md:w-1/2 mb-8 md:mb-0">
         <div className="relative h-full">

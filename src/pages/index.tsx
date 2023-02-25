@@ -16,7 +16,7 @@ const WelcomeSection = () => {
       id="welcome"
       className="bg-welcome bg-cover bg-center bg-no-repeat bg-opacity-20 min-h-screen flex items-center justify-center"
     >
-      <div className="">
+      <div className=" max-w-6xl">
         <h1 className="text-4xl font-michroma mb-8">Jostein Gjertsen</h1>
         <p className="text-lg">
           Jeg er en front-end utvikler med en bachelorgrad i Digitale medier og
@@ -40,7 +40,7 @@ const AboutSection = () => {
       className="bg-gradient-to-b from-gray-900 to-indigo-900 min-h-screen flex items-center justify-center"
     >
       <div
-        className="w-1/2 flex-col items-center justify-center "
+        className="w-1/2  max-w-6xl flex-col items-center justify-center "
         ref={ref}
         style={{ opacity: inView ? 1 : 0, transition: "opacity 0.5s ease-out" }}
       >
@@ -82,7 +82,7 @@ const WorkSection = () => {
   return (
     <section id="work" className="bg-indigo-900 min-h-full z-0">
       <div
-        className="h-full w-1/2 flex-col justify-center mx-auto"
+        className="h-full w-1/2  max-w-6xl flex-col justify-center mx-auto"
         // ref={ref}
         // style={{ opacity: inView ? 1 : 0, transition: "opacity 0.5s ease-out" }}
       >

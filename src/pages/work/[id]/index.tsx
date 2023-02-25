@@ -42,7 +42,7 @@ const ProjectPage = ({ project }: Props) => {
         id="workPage"
         className="bg-gray-800 min-h-screen flex items-center justify-center"
       >
-        <div id="workContainer" className="mt-32 w-1/2">
+        <div id="workContainer" className="mt-32 w-1/2  max-w-6xl">
           <h1 className="text-4xl font-bold mb-4">{title}</h1>
           <div id="projectInfo" className="flex justify-between">
             <h2>Kategori:</h2>
