@@ -13,7 +13,7 @@ const Archive = () => {
         id="work"
         className="bg-gray-800 min-h-screen flex items-center justify-center"
       >
-        <div className="text-center">
+        <div className="">
           <h1 className="text-4xl font-bold mb-4">Arbeid</h1>
           <p className="text-lg">
             Dette er en komplett liste av prosjekter jeg har utført eller vært
