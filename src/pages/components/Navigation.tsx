@@ -90,7 +90,7 @@ const Navigation = () => {
             </ScrollLink>
           ) : (
             <Link href="/#about">
-              <p {...linkProps}>Om meg</p>
+              <p {...linkProps}>Om</p>
             </Link>
           )}
           {isHome ? (
