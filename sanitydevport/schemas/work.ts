@@ -103,9 +103,37 @@ export default {
     },
 
     {
+      name: 'blogtitle3',
+      title: 'Blog Title 3',
+      type: 'string',
+    },
+    {
       name: 'blogtext3',
       title: 'Blog Text 3',
       type: 'text',
+    },
+
+    {
+      title: 'Blog Picture 3',
+      name: 'blogpic3',
+      type: 'image',
+    },
+
+    {
+      name: 'blogtitle4',
+      title: 'Blog Title 4',
+      type: 'string',
+    },
+    {
+      name: 'blogtext4',
+      title: 'Blog Text 4',
+      type: 'text',
+    },
+
+    {
+      title: 'Blog Picture 4',
+      name: 'blogpic4',
+      type: 'image',
     },
 
     //////////////////////////// BLOG ///////////////////////////////

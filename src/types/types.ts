@@ -19,7 +19,12 @@ export type project = {
   blogtitle2: string;
   blogtext2: string;
   blogpic2: string;
+  blogtitle3: string;
   blogtext3: string;
+  blogpic3: string;
+  blogtitle4: string;
+  blogtext4: string;
+  blogpic4: string;
 };
 
 export type Props = {

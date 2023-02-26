@@ -63,7 +63,12 @@ export const getProjectById = async (id: string) => {
         "blogtitle2": blogtitle2,
         "blogtext2": blogtext2,
         "blogpic2": blogpic2.asset->url,
-        "blogtext3": blogtext3
+        "blogtitle3": blogtitle3,
+        "blogtext3": blogtext3,
+        "blogpic3": blogpic3.asset->url,
+        "blogtitle4": blogtitle4,
+        "blogtext4": blogtext4,
+        "blogpic4": blogpic4.asset->url,
       }`,
       { id }
     );

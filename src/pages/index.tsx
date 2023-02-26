@@ -8,15 +8,15 @@ import { useEffect, useState } from "react";
 import { getProjects } from "../lib/services/workService";
 import { AiOutlineMessage } from "react-icons/ai";
 import Image from "next/image";
-import { project, Props } from "../types/types";
+import { project } from "../types/types";
 
 const WelcomeSection = () => {
   return (
     <section
       id="welcome"
-      className="bg-welcome bg-cover bg-center bg-no-repeat bg-opacity-20 min-h-screen flex items-center justify-center"
+      className="bg-welcome bg-cover bg-center bg-no-repeat bg-opacity-20 min-h-screen flex items-center justify-center relative"
     >
-      <div className=" max-w-6xl mobile:px-4 mobile:max-w-3xl">
+      <div className="max-w-6xl mobile:px-4 mobile:max-w-3xl">
         <h1 className="text-4xl font-michroma mb-8">Jostein Gjertsen</h1>
         <p className="text-lg">
           Jeg er en front-end utvikler med en bachelorgrad i Digitale medier og
@@ -26,6 +26,9 @@ const WelcomeSection = () => {
           Denne siden er en introduksjon av meg og mitt arbeid, og er laget med
           Next.js, Tailwind og Sanity.
         </p>
+      </div>
+      <div className="absolute bottom-0 left-0 w-full h-1/2">
+        <div className="h-full w-full bg-gradient-to-t from-gray-900 to-transparent" />
       </div>
     </section>
   );

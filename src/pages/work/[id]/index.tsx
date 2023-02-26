@@ -4,14 +4,14 @@ import {
   getProjectById,
   getAllProjectIds,
 } from "../../../lib/services/workService";
-import { Props, project } from "../../../types/types";
+import { project } from "../../../types/types";
 import Navigation from "../../components/Navigation";
 import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
 import { BiLinkExternal } from "react-icons/bi";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 
-const ProjectPage = ({ project }: Props) => {
+const ProjectPage = ({ project }: project) => {
   const router = useRouter();
 
   if (router.isFallback) {
@@ -35,7 +35,12 @@ const ProjectPage = ({ project }: Props) => {
     blogtitle2,
     blogtext2,
     blogpic2,
+    blogtitle3,
     blogtext3,
+    blogpic3,
+    blogtitle4,
+    blogtext4,
+    blogpic4,
   } = project;
 
   return (
@@ -91,31 +96,57 @@ const ProjectPage = ({ project }: Props) => {
             </Link>
           </div>
           <div id="article" className="mt-24">
-            <h2
-              id="blogTitle1"
-              className="text-2xl font-bold -mb-4 mobile:px-4"
-            >
-              {blogtitle1}
-            </h2>
-            <h2 id="blogText1" className="text-lg my-8 mobile:px-4">
-              {blogtext1}
-            </h2>
-            <img src={blogpic1} alt={`${title} thumbnail`} className="my-8" />
+            <div>
+              <h2
+                id="blogTitle1"
+                className="text-2xl font-bold -mb-4 mobile:px-4"
+              >
+                {blogtitle1}
+              </h2>
+              <p id="blogText1" className="text-lg my-8 mobile:px-4">
+                {blogtext1}
+              </p>
+              <img src={blogpic1} alt="" className="my-8" />
+            </div>
 
-            <h2
-              id="blogtitle2"
-              className="text-2xl font-bold -mb-4 mobile:px-4"
-            >
-              {blogtitle2}
-            </h2>
-            <p id="blogText2" className="text-lg my-8 mobile:px-4">
-              {blogtext2}
-            </p>
-            <img src={blogpic2} alt={`${title} thumbnail`} className="my-8" />
+            <div>
+              <h2
+                id="blogtitle2"
+                className="text-2xl font-bold -mb-4 mobile:px-4"
+              >
+                {blogtitle2}
+              </h2>
+              <p id="blogText2" className="text-lg my-8 mobile:px-4">
+                {blogtext2}
+              </p>
+              <img src={blogpic2} alt="" className="mt-8 mb-16" />
+            </div>
 
-            <p id="blogText3" className="text-lg mt-8 mb-64 mobile:px-4">
-              {blogtext3}
-            </p>
+            <div>
+              <h2
+                id="blogtitle3"
+                className="text-2xl font-bold -mb-4 mobile:px-4"
+              >
+                {blogtitle3}
+              </h2>
+              <p id="blogText3" className="text-lg my-8 mobile:px-4">
+                {blogtext3}
+              </p>
+              <img src={blogpic3} alt="" className="my-8" />
+            </div>
+
+            <div>
+              <h2
+                id="blogtitle4"
+                className="text-2xl font-bold -mb-4 mobile:px-4"
+              >
+                {blogtitle4}
+              </h2>
+              <p id="blogText4" className="text-lg my-8 mobile:px-4">
+                {blogtext4}
+              </p>
+              <img src={blogpic4} alt="" className="my-8" />
+            </div>
           </div>
         </div>
       </section>
