@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { BiLinkExternal } from "react-icons/bi";
+import { CgUnavailable } from "react-icons/cg";
 
 const Archive = ({ project }: Props) => {
   const router = useRouter();
@@ -65,7 +66,7 @@ const Archive = ({ project }: Props) => {
                     {project.date}
                   </td>
                   <td className="py-2 mobile:py-0 font-bold ">
-                    <Link href={`/work/${project.slug}`}>
+                    <Link href={`/work${project.slug}`}>
                       <p className="text-slate-400 transition duration-300 ease-in-out hover:text-white">
                         {project.title}
                       </p>
@@ -75,12 +76,19 @@ const Archive = ({ project }: Props) => {
                     {project.tech.join(", ")}
                   </td>
                   <td className="py-2 space-x-4 flex justify-center items-center mobile:space-x-1  ">
-                    <Link href={project.demo}>
-                      <BiLinkExternal
-                        className="hover:text-rose-500 transition duration-300 ease-in-out  mobile:h-5"
+                    {project.demo ? (
+                      <Link href={project.demo}>
+                        <BiLinkExternal
+                          className="hover:text-rose-500 transition duration-300 ease-in-out mobile:mt-4"
+                          size={28}
+                        />
+                      </Link>
+                    ) : (
+                      <CgUnavailable
+                        className="text-gray-600 mobile:mt-4"
                         size={28}
                       />
-                    </Link>
+                    )}
                     <Link href={project.git}>
                       <FaGithub
                         className="hover:text-rose-500 transition duration-300 ease-in-out mobile:h-5 "

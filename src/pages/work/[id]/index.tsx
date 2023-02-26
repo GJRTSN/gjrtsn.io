@@ -10,6 +10,7 @@ import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
 import { BiLinkExternal } from "react-icons/bi";
 import { AiOutlineArrowLeft } from "react-icons/ai";
+import { CgUnavailable } from "react-icons/cg";
 
 const ProjectPage = ({ project }: project) => {
   const router = useRouter();
@@ -82,12 +83,17 @@ const ProjectPage = ({ project }: project) => {
             <p className=" text-gray-500 mobile:mb-4">{tech.join(", ")}</p>
             <h2>Dato:</h2>
             <p className=" text-gray-500 mobile:mb-4">{date}</p>
-            <Link href={demo}>
-              <BiLinkExternal
-                className="hover:text-rose-500 transition duration-300 ease-in-out mobile:mt-4"
-                size={28}
-              />
-            </Link>
+            {demo ? (
+              <Link href={demo}>
+                <BiLinkExternal
+                  className="hover:text-rose-500 transition duration-300 ease-in-out mobile:mt-4"
+                  size={28}
+                />
+              </Link>
+            ) : (
+              <CgUnavailable className="text-gray-600 mobile:mt-4" size={36} />
+            )}
+
             <Link href={git}>
               <FaGithub
                 className="hover:text-rose-500 transition duration-300 ease-in-out mobile:mt-4"
