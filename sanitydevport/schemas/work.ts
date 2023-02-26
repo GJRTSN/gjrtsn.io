@@ -22,7 +22,7 @@ export default {
     {
       name: 'description',
       title: 'Beskrivelse',
-      type: 'string',
+      type: 'text',
     },
     {
       name: 'tech',
@@ -63,9 +63,14 @@ export default {
     },
 
     {
+      name: 'blogtitle1',
+      title: 'Blog Title 1',
+      type: 'string',
+    },
+    {
       name: 'blogtext1',
       title: 'Blog Text 1',
-      type: 'string',
+      type: 'text',
     },
 
     {
@@ -75,9 +80,14 @@ export default {
     },
 
     {
+      name: 'blogtitle2',
+      title: 'Blog Title 2',
+      type: 'string',
+    },
+    {
       name: 'blogtext2',
       title: 'Blog Text 2',
-      type: 'string',
+      type: 'text',
     },
 
     {
@@ -89,7 +99,7 @@ export default {
     {
       name: 'blogtext3',
       title: 'Blog Text 3',
-      type: 'string',
+      type: 'text',
     },
 
     //////////////////////////// BLOG ///////////////////////////////

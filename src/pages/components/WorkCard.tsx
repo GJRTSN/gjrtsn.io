@@ -40,7 +40,7 @@ const WorkCard: FC<WorkCardProps> = ({
         } md:w-1/2 px-4 p-8 md:order-2 ${flip ? "md:order-1" : "md:order-2"}`}
       >
         <Link href={`/work/${slug}`}>
-          <h2 className="text-2xl text-black font-bold my-2 mobile:text-center">
+          <h2 className="text-2xl text-black font-bold my-2 hover:text-rose-500 transition-all  duration-300 ease-in-out mobile:text-center">
             {title}
           </h2>
         </Link>
@@ -58,7 +58,7 @@ const WorkCard: FC<WorkCardProps> = ({
         </div>
         <p
           className={`absolute mobile:hidden ${
-            flip ? "top-0 left-42 ml-36 mt-4" : "top-0 right-0 m-4"
+            flip ? "top-0 left-1/3 ml-14 mt-4" : "top-0 right-0 m-4"
           } px-1 text-gray-400 border-gray-300 border-solid border-2 rounded-md text-sm font-konit`}
         >
           {category ? category.toUpperCase() : "KATEGORI"}

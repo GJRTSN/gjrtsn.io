@@ -76,7 +76,7 @@ const Navigation = () => {
             />
           </Link>
         </li>
-        <li className="flex justify-end flex-1 items-center font-bold space-x-16 mobile:space-x-12 justify-center">
+        <li className="flex justify-end flex-1 items-center font-bold space-x-16 mobile:justify-center ">
           {isHome ? (
             <ScrollLink
               to="about"

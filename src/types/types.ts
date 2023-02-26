@@ -10,11 +10,13 @@ export type project = {
     };
   }[];
   slug: string;
-  date: Date;
+  date: string;
   demo: string;
   git: string;
+  blogtitle1: string;
   blogtext1: string;
   blogpic1: string;
+  blogtitle2: string;
   blogtext2: string;
   blogpic2: string;
   blogtext3: string;
@@ -29,7 +31,7 @@ export type WorkCardProps = {
   title: string;
   category: string;
   description: string;
-  tech?: string[]; // VS Code;
+  tech?: string[];
   slug: string;
   flip: boolean;
 };

@@ -16,7 +16,7 @@ const WelcomeSection = () => {
       id="welcome"
       className="bg-welcome bg-cover bg-center bg-no-repeat bg-opacity-20 min-h-screen flex items-center justify-center"
     >
-      <div className=" max-w-6xl mobile:px-4">
+      <div className=" max-w-6xl mobile:px-4 mobile:max-w-3xl">
         <h1 className="text-4xl font-michroma mb-8">Jostein Gjertsen</h1>
         <p className="text-lg">
           Jeg er en front-end utvikler med en bachelorgrad i Digitale medier og
@@ -40,7 +40,7 @@ const AboutSection = () => {
       className="bg-gradient-to-b from-gray-900 to-indigo-900 min-h-screen flex items-center justify-center"
     >
       <div
-        className="w-1/2  max-w-6xl flex-col items-center justify-center mobile:w-screen px-4"
+        className="w-1/2  max-w-6xl flex-col items-center justify-center mobile:w-screen px-4 mobile:max-w-3xl"
         ref={ref}
         style={{ opacity: inView ? 1 : 0, transition: "opacity 0.5s ease-out" }}
       >
@@ -83,8 +83,13 @@ const WorkSection = () => {
 
   return (
     <section id="work" className="bg-indigo-900 min-h-full z-0">
-      <div className="h-full w-1/2 max-w-6xl flex-col justify-center mx-auto mobile:w-screen px-2">
-        <h1 className="text-4xl font-bold py-4">Arbeid</h1>
+      <div className="h-full w-1/2 max-w-6xl flex-col justify-center mx-auto mobile:w-screen px-2 mobile:max-w-3xl">
+        <Link href="/work">
+          {" "}
+          <h1 className="text-4xl font-bold py-4 transition duration-300 ease-in-out hover:text-rose-500">
+            Arbeid
+          </h1>
+        </Link>
         <p className="text-lg">
           Her er noe av mitt arbeid jeg ønsker å fremheve.
         </p>
@@ -101,7 +106,7 @@ const WorkSection = () => {
         </div>
         <div className="text-center">
           <Link href="/work">
-            <button className="my-10 bg-gradient-to-r from-rose-500 to-pink-500 text-white py-4 px-10 rounded-md transition duration-300 ease-in-out hover:bg-blue-500 hover:shadow-2xl">
+            <button className="my-10 bg-rose-500 hover:bg-pink-600 text-white py-4 px-10 rounded-md transition duration-300 ease-in-out  hover:shadow-2xl">
               <p className="font-bold">Arkiv</p>
             </button>
           </Link>
