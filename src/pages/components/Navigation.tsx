@@ -59,24 +59,8 @@ const Navigation = () => {
               </p>
             </Link>
           )}
-          <ScrollLink
-            href="/"
-            to="/"
-            smooth={true}
-            duration={500}
-            spy={true}
-            offset={-80}
-            className="text-white hover:text-rose-300 transition duration-300 ease-in-out"
-          ></ScrollLink>
         </li>
-        <li className="mobile:hidden">
-          <Link href="https://github.com/gjrtsn">
-            <FaGithub
-              className="mx-4  hover:text-rose-500 transition duration-300 ease-in-out"
-              size={28}
-            />
-          </Link>
-        </li>
+
         <li className="flex justify-end flex-1 items-center font-bold space-x-16 mobile:justify-center ">
           {isHome ? (
             <ScrollLink

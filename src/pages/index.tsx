@@ -1,33 +1,54 @@
 import Head from "next/head";
 import Link from "next/link";
-import { FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaLinkedin, FaEnvelope, FaGithub } from "react-icons/fa";
 import Navigation from "./components/Navigation";
 import { useInView } from "react-intersection-observer";
 import WorkCard from "./components/WorkCard";
 import { useEffect, useState } from "react";
 import { getProjects } from "../lib/services/workService";
-import { AiOutlineMessage } from "react-icons/ai";
-import Image from "next/image";
+import { AiOutlineMessage, AiFillDownCircle } from "react-icons/ai";
 import { project } from "../types/types";
+import { Link as ScrollLink } from "react-scroll";
 
 const WelcomeSection = () => {
+  const linkProps = {
+    className:
+      "text-white hover:text-rose-300 transition duration-300 ease-in-out",
+  };
+
   return (
     <section
       id="welcome"
       className="bg-welcome bg-cover bg-center bg-no-repeat bg-opacity-20 min-h-screen flex items-center justify-center relative"
     >
-      <div className="max-w-6xl mobile:px-4 mobile:max-w-3xl">
-        <h1 className="text-4xl font-michroma mb-8">Jostein Gjertsen</h1>
+      <div className="z-10 max-w-6xl mobile:px-4 mobile:max-w-3xl">
+        <h1 className="text-4xl font-michroma mb-8 hover:text-rose-500 transition duration-300 ease-in-out">
+          Jostein Gjertsen
+        </h1>
         <p className="text-lg">
-          Jeg er en front-end utvikler med en bachelorgrad i Digitale medier og
-          design fra Høgskolen i Østfold.
+          Hei! Jeg er en student som går siste semester på en bachelorgrad i
+          Digitale medier og design.
         </p>
         <p className="text-lg">
-          Denne siden er en introduksjon av meg og mitt arbeid, og er laget med
-          Next.js, Tailwind og Sanity.
+          Denne siden er en introduksjon av meg og mitt arbeid, bla nedover for
+          å se mer!
         </p>
+        <div className="  flex justify-center mt-24  hover:text-rose-500 transition duration-300 ease-in-out mobile:mt-8">
+          <ScrollLink
+            to="about"
+            smooth={true}
+            duration={500}
+            spy={true}
+            {...linkProps}
+          >
+            <AiFillDownCircle
+              className="  hover:text-rose-500 transition duration-300 ease-in-out"
+              size={32}
+            />
+          </ScrollLink>
+        </div>
       </div>
-      <div className="absolute bottom-0 left-0 w-full h-1/2">
+      <div className="absolute  bottom-0 left-0 w-full h-1/2">
         <div className="h-full w-full bg-gradient-to-t from-gray-900 to-transparent" />
       </div>
     </section>
@@ -49,22 +70,45 @@ const AboutSection = () => {
       >
         <h1 className="text-4xl font-bold mb-4">Om meg</h1>
         <div className="flex">
-          <p className="text-lg w-3/5 mobile:w-full">
-            Hei! Mitt navn er Jostein Gjertsen og jeg kommer opprinnelig fra
-            Tønsberg. For øyeblikket går jeg siste semester på en bachelorgrad
-            som jeg tar på Høgskolen i Østfold i Halden. Jeg ble først kjent med
-            webutvikling i 2021 da jeg hadde et kurs om det i studiet, og
-            interessen for dette økte og økte.
-          </p>
-          <div className="w-2/5 px-12 mobile:hidden">
+          <div className="flex flex-col">
+            <p className="mobile:w-full">
+              Jeg kommer opprinnelig fra Tønsberg, men bor for øyeblikket i
+              Halden i forbindelse med utdanning. Jeg går siste semester på en
+              IT-relatert bachelorgrad som jeg tar på Høgskolen i Østfold.
+            </p>
+            <p className="mt-4 mobile:w-full">
+              Studiet har hatt fokus på blant annet webutikling,
+              informasjonsarkitektur, og designmetoder. Jeg ble først kjent med
+              koding i 2021 og siden det har interessen økt betraktelig. Selv
+              trives jeg veldig godt med front-end utvikling og har blitt godt
+              kjent med React. Se noe av mitt arbeid lenger ned på siden eller
+              besøk min GitHub-profil.
+            </p>
+            <div className="flex mt-8 space-x-4 mobile:justify-center">
+              <Link href="https://github.com/GJRTSN">
+                <FaGithub
+                  className=" hover:text-rose-500 transition duration-300 ease-in-out"
+                  size={42}
+                />
+              </Link>
+              <Link href="https://linkedin.com/in/gjrtsn">
+                <FaLinkedin
+                  className=" hover:text-rose-500 transition duration-300 ease-in-out"
+                  size={48}
+                />
+              </Link>
+            </div>
+          </div>
+
+          {/* <div className="w-2/5 min-h-64 mobile:hidden">
             <Image
               className="shadow-2xl "
               src="https://media.licdn.com/dms/image/C4D03AQFSXygKgD6kbA/profile-displayphoto-shrink_800_800/0/1596528788276?e=1682553600&v=beta&t=C9OmWsGh9VYr1t6_psD4Z69seAba7KNmDg29cqlOIww"
-              alt="Picture of the author"
+              alt=""
               width={1000}
               height={1000}
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
