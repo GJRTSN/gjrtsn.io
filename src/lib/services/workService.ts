@@ -4,14 +4,34 @@ import { project, Props } from "../../types/types";
 
 export const getProjects = async () => {
   try {
-    const data = await client.fetch(`*[_type == "project"] {
+    const data =
+      await client.fetch(`*[_type == "project" && spotlight == true] {
+      date,
       "thumbnail": thumbnail.asset->url,
       title,
       "category": category,
       "description": description,
       "tech": tech[]->tech,
-      "slug": slug
+      "slug": slug,
+      "date": date,
+      spotlight
     }`);
+
+    // Sort the data by the year and month
+    data.sort((a, b) => {
+      const [aYear, aMonth] = a.date.split("-");
+      const [bYear, bMonth] = b.date.split("-");
+
+      // Compare the years first
+      if (aYear < bYear) return 1;
+      if (aYear > bYear) return -1;
+
+      // If the years are equal, compare the months
+      if (aMonth < bMonth) return 1;
+      if (aMonth > bMonth) return -1;
+
+      return 0;
+    });
 
     return data;
   } catch (error) {
@@ -67,18 +87,18 @@ export const getProjectList = async () => {
       }`
     );
 
-    // Sort the data by the month
+    // Sort the data by date
     data.sort((a, b) => {
       const [aMonth, aYear] = a.date.split(".");
       const [bMonth, bYear] = b.date.split(".");
 
-      // Compare the months first
-      if (aMonth < bMonth) return 1;
-      if (aMonth > bMonth) return -1;
-
-      // If the months are equal, compare the years
+      // Compare the years first
       if (aYear < bYear) return 1;
       if (aYear > bYear) return -1;
+
+      // If the years are equal, compare the months
+      if (aMonth < bMonth) return 1;
+      if (aMonth > bMonth) return -1;
 
       return 0;
     });
@@ -96,6 +116,15 @@ export const getAllProjectIds = async () => {
       id: project.slug.substr(1),
     },
   }));
+};
+
+export const getResume = async () => {
+  const data = await client.fetch(`
+    *[_type == "files"] {
+      "fileUrl": file.asset->url
+    }
+  `);
+  return data[0].fileUrl;
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {

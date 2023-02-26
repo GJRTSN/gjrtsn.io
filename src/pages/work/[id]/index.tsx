@@ -57,7 +57,7 @@ const ProjectPage = ({ project }: Props) => {
             <Link href="/">
               <div className="flex items-center">
                 <AiOutlineArrowLeft className=" " size={12} />
-                <p className="ml-1 mobile:text-sm">Tilbake</p>
+                <p className="ml-1 mobile:text-sm">Hjem</p>
               </div>
             </Link>
           </div>

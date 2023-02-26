@@ -74,7 +74,7 @@ const Archive = ({ project }: Props) => {
                   <td className="py-2 mobile:hidden text-sm text-gray-300">
                     {project.tech.join(", ")}
                   </td>
-                  <td className="py-2 space-x-4 flex justify-center items-center mobile:space-x-1 ">
+                  <td className="py-2 space-x-4 flex justify-center items-center mobile:space-x-1  ">
                     <Link href={project.demo}>
                       <BiLinkExternal
                         className="hover:text-rose-500 transition duration-300 ease-in-out  mobile:h-5"

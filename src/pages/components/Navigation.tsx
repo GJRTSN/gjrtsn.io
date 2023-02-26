@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { Link as ScrollLink } from "react-scroll";
 import { FaGithub } from "react-icons/fa";
+import ResumeBtn from "./ResumeBtn";
 
 const Navigation = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -122,14 +123,7 @@ const Navigation = () => {
               <p {...linkProps}>Kontakt</p>
             </Link>
           )}
-          <button
-            className="group cursor-pointer bg-transparent border-solid border-2 border-rose-500 rounded-sm w-16 h-8  
-           hover:bg-pink-500  transition duration-300 ease-in-out mobile:hidden"
-          >
-            <p className="text-rose-500 group-hover:text-white transition duration-300 ease-in-out">
-              CV
-            </p>
-          </button>
+          <ResumeBtn />
         </li>
       </ul>
     </nav>

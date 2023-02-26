@@ -3,10 +3,16 @@ export default {
   title: 'Arbeid',
   type: 'document',
   fields: [
+    //////////////////////////// CARD ///////////////////////////////
+
     {
-      //////////////////////////// CARD ///////////////////////////////
+      title: 'Vis på forsiden',
+      name: 'spotlight',
+      type: 'boolean',
+    },
+    {
       name: 'title',
-      title: 'Prosjekttittel',
+      title: 'Tittel',
       type: 'string',
     },
     {
