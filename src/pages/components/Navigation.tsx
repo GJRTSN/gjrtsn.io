@@ -86,7 +86,7 @@ const Navigation = () => {
               spy={true}
               {...linkProps}
             >
-              Om meg
+              Om
             </ScrollLink>
           ) : (
             <Link href="/#about">
