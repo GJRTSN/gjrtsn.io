@@ -86,8 +86,14 @@ const Archive = ({ project }: Props) => {
                     </Link>
                   </td>
                   <td className="py-2 mobile:hidden text-sm text-gray-500">
-                    {project.category.toUpperCase()}
+                    <p
+                      className="px-1 text-gray-500 border-gray-600 border-solid border-2 rounded-md text-sm font-konit"
+                      style={{ display: "inline-block" }}
+                    >
+                      {project.category.toUpperCase()}
+                    </p>
                   </td>
+
                   <td className="py-2 mobile:hidden text-sm text-gray-300">
                     {project.tech.join(", ")}
                   </td>
