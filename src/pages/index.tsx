@@ -22,7 +22,7 @@ const WelcomeSection = () => {
       className="bg-welcome bg-cover bg-center bg-no-repeat bg-opacity-20 min-h-screen flex items-center justify-center relative"
     >
       <div className="z-10 max-w-6xl mobile:px-4 mobile:max-w-3xl">
-        <h1 className="text-4xl font-michroma mb-8 hover:text-rose-500 transition duration-300 ease-in-out">
+        <h1 className="inline-block text-4xl font-michroma mb-8 hover:text-rose-500 transition duration-300 ease-in-out">
           Jostein Gjertsen
         </h1>
         <p className="text-lg">
@@ -133,7 +133,7 @@ const WorkSection = () => {
       <div className="h-full w-1/2 max-w-6xl flex-col justify-center mx-auto mobile:w-screen px-2 mobile:max-w-3xl">
         <Link href="/work">
           {" "}
-          <h1 className="text-4xl font-bold py-4 transition duration-300 ease-in-out hover:text-rose-500">
+          <h1 className="inline-block text-4xl font-bold py-4 transition duration-300 ease-in-out hover:text-rose-500">
             Arbeid
           </h1>
         </Link>

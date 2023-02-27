@@ -80,16 +80,13 @@ const Archive = ({ project }: Props) => {
                   </td>
                   <td className="py-2 mobile:py-0 font-bold ">
                     <Link href={`/work${project.slug}`}>
-                      <p className="text-slate-400 transition duration-300 ease-in-out hover:text-white">
+                      <p className="inline-block text-slate-400 transition duration-300 ease-in-out hover:text-white">
                         {project.title}
                       </p>
                     </Link>
                   </td>
                   <td className="py-2 mobile:hidden text-sm text-gray-500">
-                    <p
-                      className="px-1 text-gray-500 border-gray-600 border-solid border-2 rounded-md text-sm font-konit"
-                      style={{ display: "inline-block" }}
-                    >
+                    <p className="inline-block px-1 text-gray-500 border-gray-600 border-solid border-2 rounded-md text-sm font-konit">
                       {project.category.toUpperCase()}
                     </p>
                   </td>

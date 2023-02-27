@@ -40,7 +40,7 @@ const WorkCard: FC<WorkCardProps> = ({
         } md:w-1/2 px-4 p-8 md:order-2 ${flip ? "md:order-1" : "md:order-2"}`}
       >
         <Link href={`/work/${slug}`}>
-          <h2 className="text-2xl text-black font-bold my-2 hover:text-rose-500 transition-all  duration-300 ease-in-out mobile:text-center">
+          <h2 className="inline-block text-2xl text-black font-bold my-2 hover:text-rose-500 transition-all  duration-300 ease-in-out mobile:text-center">
             {title}
           </h2>
         </Link>
