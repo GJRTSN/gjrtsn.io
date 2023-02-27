@@ -54,16 +54,16 @@ const ProjectPage = ({ project }: project) => {
       >
         <div
           id="workContainer"
-          className="mt-32 w-1/2  max-w-6xl mobile:w-screen"
+          className="mt-32 w-1/2  max-w-6xl mobile:w-screen mobile:mt-24"
         >
           <div
             id="goBack"
-            className="flex items-center mobile:ml-14 mb-4 text-gray-400 hover:text-rose-500 transition duration-300 ease-in-out"
+            className="flex items-center mb-4 text-gray-400 hover:text-rose-500 transition duration-300 ease-in-out mobile:ml-8 mobile:mb-12"
           >
-            <Link href="/">
+            <Link href="/work">
               <div className="flex items-center">
                 <AiOutlineArrowLeft className=" " size={12} />
-                <p className="ml-1 mobile:text-sm">Hjem</p>
+                <p className="ml-1 mobile:text-sm">Tilbake</p>
               </div>
             </Link>
           </div>
@@ -91,7 +91,7 @@ const ProjectPage = ({ project }: project) => {
                 />
               </Link>
             ) : (
-              <CgUnavailable className="text-gray-600 mobile:mt-4" size={36} />
+              <CgUnavailable className="text-gray-700 mobile:mt-4" size={36} />
             )}
 
             <Link href={git}>

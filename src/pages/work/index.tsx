@@ -1,13 +1,14 @@
 import Head from "next/head";
 import Link from "next/link";
 import Navigation from "../components/Navigation";
-import { getProjectList } from "../../lib/services/workService";
+import { getProjectList, getProjects } from "../../lib/services/workService";
 import { Props, project } from "../../types/types";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { BiLinkExternal } from "react-icons/bi";
 import { CgUnavailable } from "react-icons/cg";
+import { AiOutlineArrowLeft } from "react-icons/ai";
 
 const Archive = ({ project }: Props) => {
   const router = useRouter();
@@ -25,7 +26,7 @@ const Archive = ({ project }: Props) => {
   if (router.isFallback) {
     return (
       <div className="min-h-screen min-w-screen flex items-center justify-center text-center">
-        Laster inn prosjekt...
+        Laster inn prosjekter ...
       </div>
     );
   }
@@ -40,7 +41,18 @@ const Archive = ({ project }: Props) => {
         id="work"
         className="bg-gray-800 min-h-screen flex items-center justify-center"
       >
-        <div className="w-full max-w-6xl mobile:w-screen mobile:max-w-3xl mx-4">
+        <div className="w-full mx-4 max-w-6xl mobile:w-screen mobile:max-w-3xl mobile:mx-4">
+          <div
+            id="goBack"
+            className="flex items-center  mb-4 text-gray-400 hover:text-rose-500 transition duration-300 ease-in-out"
+          >
+            <Link href="/">
+              <div className="flex items-center">
+                <AiOutlineArrowLeft className=" " size={12} />
+                <p className="ml-1 mobile:text-sm">Hjem</p>
+              </div>
+            </Link>
+          </div>
           <h1 className="text-4xl font-bold mb-4">Arbeid</h1>
           <p className="text-lg">
             Dette er en komplett liste av prosjekter jeg har utført eller
@@ -51,8 +63,9 @@ const Archive = ({ project }: Props) => {
               <tr className="text-slate-500 font-bold text-lg">
                 <th className="">Dato</th>
                 <th className="">Tittel</th>
+                <th className=" mobile:hidden">Kategori</th>
                 <th className=" mobile:hidden">Verktøy</th>
-                <th className="text-center">Linker</th>
+                <th className="flex justify-end mr-2">Linker</th>
                 {/* <th className="text-center mobile:hidden">GitHub</th> */}
               </tr>
             </thead>
@@ -72,22 +85,23 @@ const Archive = ({ project }: Props) => {
                       </p>
                     </Link>
                   </td>
+                  <td className="py-2 mobile:hidden text-sm text-gray-500">
+                    {project.category.toUpperCase()}
+                  </td>
                   <td className="py-2 mobile:hidden text-sm text-gray-300">
                     {project.tech.join(", ")}
                   </td>
-                  <td className="py-2 space-x-4 flex justify-center items-center mobile:space-x-1  ">
+
+                  <td className="py-2 space-x-4 flex justify-end items-center mobile:space-x-1  ">
                     {project.demo ? (
                       <Link href={project.demo}>
                         <BiLinkExternal
-                          className="hover:text-rose-500 transition duration-300 ease-in-out mobile:mt-4"
+                          className="hover:text-rose-500 transition duration-300 ease-in-out "
                           size={28}
                         />
                       </Link>
                     ) : (
-                      <CgUnavailable
-                        className="text-gray-600 mobile:mt-4"
-                        size={28}
-                      />
+                      <CgUnavailable className="text-gray-700" size={28} />
                     )}
                     <Link href={project.git}>
                       <FaGithub

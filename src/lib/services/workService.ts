@@ -84,6 +84,7 @@ export const getProjectList = async () => {
     const data = await client.fetch(
       `*[_type == "project"] {
         title,
+        category,
         "tech": tech[]->tech,
         "date": date,
         "demo": demo,
