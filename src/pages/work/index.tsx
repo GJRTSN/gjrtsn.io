@@ -1,8 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
 import Navigation from "../components/Navigation";
-import { getProjectList, getProjects } from "../../lib/services/workService";
-import { Props, Project } from "../../types/types";
+import { getProjectList } from "../../lib/services/workService";
+import { Project } from "../../types/types";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { FaGithub } from "react-icons/fa";
@@ -10,13 +10,13 @@ import { BiLinkExternal } from "react-icons/bi";
 import { CgUnavailable } from "react-icons/cg";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 
-const Archive = ({ project }: Props) => {
+const Archive = () => {
   const router = useRouter();
   const [works, setWorks] = useState([]);
 
   useEffect(() => {
     getProjectList()
-      .then((data: project[]) => {
+      .then((data: Project[]) => {
         // data.sort((a, b) => new Date(b.date) - new Date(a.date));
         setWorks(data);
       })

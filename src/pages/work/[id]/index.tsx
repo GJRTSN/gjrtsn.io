@@ -14,7 +14,7 @@ import { CgUnavailable } from "react-icons/cg";
 import Image from "next/image";
 import PortableText from "react-portable-text";
 
-const ProjectPage = ({ project }: project) => {
+const ProjectPage = ({ project }: Project) => {
   const router = useRouter();
 
   if (router.isFallback) {
@@ -29,10 +29,7 @@ const ProjectPage = ({ project }: project) => {
     thumbnail,
     title,
     category,
-    description,
     tech,
-    images,
-    slug,
     date,
     demo,
     git,

@@ -26,6 +26,7 @@ const WorkCard: FC<WorkCardProps> = ({
             src={thumbnail}
             alt={title}
             layout="fill"
+            objectPosition="top left"
           />
           <div
             id="shade"
