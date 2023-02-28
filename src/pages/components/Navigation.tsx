@@ -36,6 +36,8 @@ const Navigation = () => {
       style={{
         background: "rgba(0, 0, 0, 0.1)",
         backdropFilter: "blur(5px)",
+        boxShadow:
+          "0 8px 12px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
       }}
     >
       <ul className="font-sen flex justify-between items-center w-3/5 max-w-screen-xl mobile:w-screen ">

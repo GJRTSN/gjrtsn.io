@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^5.2.2",
     "@types/node": "18.14.1",
     "@types/react": "18.0.28",
@@ -22,6 +23,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
     "react-intersection-observer": "^9.4.3",
+    "react-portable-text": "^0.6.0",
     "react-scroll": "^1.8.9",
     "typescript": "4.9.5"
   },

@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Navigation from "../components/Navigation";
 import { getProjectList, getProjects } from "../../lib/services/workService";
-import { Props, project } from "../../types/types";
+import { Props, Project } from "../../types/types";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { FaGithub } from "react-icons/fa";

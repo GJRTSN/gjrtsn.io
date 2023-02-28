@@ -4,13 +4,15 @@ import {
   getProjectById,
   getAllProjectIds,
 } from "../../../lib/services/workService";
-import { project } from "../../../types/types";
+import { Props, Project } from "../../../types/types";
 import Navigation from "../../components/Navigation";
 import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
 import { BiLinkExternal } from "react-icons/bi";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { CgUnavailable } from "react-icons/cg";
+import Image from "next/image";
+import PortableText from "react-portable-text";
 
 const ProjectPage = ({ project }: project) => {
   const router = useRouter();
@@ -24,41 +26,46 @@ const ProjectPage = ({ project }: project) => {
   }
 
   const {
+    thumbnail,
     title,
     category,
+    description,
     tech,
+    images,
+    slug,
     date,
     demo,
     git,
-    blogtitle1,
-    blogtext1,
-    blogpic1,
-    blogtitle2,
-    blogtext2,
-    blogpic2,
-    blogtitle3,
-    blogtext3,
-    blogpic3,
-    blogtitle4,
-    blogtext4,
-    blogpic4,
-  } = project;
+    article: { articleSections } = {},
+  } = project ?? {};
 
   return (
     <div>
       <Navigation />
 
-      <section
-        id="workPage"
-        className="bg-gray-800 min-h-screen flex items-center justify-center"
-      >
+      <section id="workPage" className=" bg-gray-800 min-h-screen pb-32">
         <div
           id="workContainer"
-          className="mt-32 w-1/2  max-w-6xl mobile:w-screen mobile:mt-24"
+          className="pt-16 w-1/2  max-w-6xl mobile:w-screen mx-auto"
         >
+          <div className="h-64 relative mobile:h-32">
+            <Image
+              src={thumbnail}
+              alt="thumbnail"
+              layout="fill"
+              objectFit="cover"
+              objectPosition="top"
+            />
+            <div className="absolute bottom-0 left-0 w-full h-full">
+              <div className="h-full w-full bg-gradient-to-t from-gray-800 to-transparent" />
+            </div>
+            <div className="absolute bottom-0 left-0 w-full h-full">
+              <div className="h-full w-full bg-gray-800 opacity-80" />
+            </div>
+          </div>
           <div
             id="goBack"
-            className="flex items-center mb-4 text-gray-400 hover:text-rose-500 transition duration-300 ease-in-out mobile:ml-8 mobile:mb-12"
+            className="mt-16 flex items-center mb-4 text-gray-400 hover:text-rose-500 transition duration-300 ease-in-out mobile:ml-8 mobile:mb-12"
           >
             <Link href="/work">
               <div className="flex items-center">
@@ -67,21 +74,20 @@ const ProjectPage = ({ project }: project) => {
               </div>
             </Link>
           </div>
-
           <h1 className="text-4xl font-bold mobile:text-center mb-4 ">
             {title}
           </h1>
           <div
             id="projectInfo"
-            className="flex justify-between mobile:flex-col text-center items-center "
+            className="flex justify-between mobile:flex-col text-center items-center gap-4"
           >
-            <h2>Kategori:</h2>
+            <h2 className="font-bold">Kategori:</h2>
             <p className=" text-gray-500 mobile:mb-4">
               {category ? category.toUpperCase() : "KATEGORI"}
             </p>
-            <h2>Verktøy:</h2>
-            <p className=" text-gray-500 mobile:mb-4">{tech.join(", ")}</p>
-            <h2>Dato:</h2>
+            <h2 className="font-bold">Verktøy:</h2>
+            <p className=" text-gray-500 mobile:mb-4 ">{tech.join(", ")}</p>
+            <h2 className="font-bold">Dato:</h2>
             <p className=" text-gray-500 mobile:mb-4">{date}</p>
             {demo ? (
               <Link href={demo}>
@@ -102,6 +108,45 @@ const ProjectPage = ({ project }: project) => {
             </Link>
           </div>
           <div id="article" className="mt-24">
+            {articleSections &&
+              articleSections.map((section: any, index: number) => (
+                <div key={index}>
+                  <h2 className="text-2xl font-bold  mobile:px-4">
+                    {section.blogTitle}
+                  </h2>
+                  <PortableText
+                    className="my-4 mobile:px-4"
+                    content={section.bodyPortableText}
+                  />
+                  <img src={section.blogPic} alt="" className="my-8 " />
+                </div>
+              ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = await getAllProjectIds();
+  return { paths, fallback: true };
+};
+
+export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
+  const project = await getProjectById(params?.id as string);
+
+  if (!project) {
+    return { notFound: true };
+  }
+
+  return { props: { project } };
+};
+
+export default ProjectPage;
+
+{
+  /* <div id="article" className="mt-24">
             <div>
               <h2
                 id="blogTitle1"
@@ -153,26 +198,5 @@ const ProjectPage = ({ project }: project) => {
               </p>
               <img src={blogpic4} alt="" className="my-8" />
             </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  );
-};
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = await getAllProjectIds();
-  return { paths, fallback: true };
-};
-
-export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
-  const project = await getProjectById(params?.id as string);
-
-  if (!project) {
-    return { notFound: true };
-  }
-
-  return { props: { project } };
-};
-
-export default ProjectPage;
+          </div> */
+}

@@ -5,7 +5,7 @@ import { project, Props } from "../../types/types";
 export const getProjects = async () => {
   try {
     const data =
-      await client.fetch(`*[_type == "project" && spotlight == true] {
+      await client.fetch(`*[_type == "projectdata" && spotlight == true] {
       date,
       "thumbnail": thumbnail.asset->url,
       title,
@@ -42,34 +42,29 @@ export const getProjects = async () => {
 export const getProjectById = async (id: string) => {
   try {
     const data = await client.fetch(
-      `*[_type == "project" && slug == $id][0] {
-        "thumbnail": thumbnail.asset->url,
-        title,
-        "category": category,
-        "description": description,
-        "tech": tech[]->tech,
-        images[] {
-          asset-> {
-            url
+      `*[_type == "projectdata" && slug == $id][0] {
+          "thumbnail": thumbnail.asset->url,
+          title,
+          "category": category,
+          "description": description,
+          "tech": tech[]->tech,
+          images[] {
+            asset-> {
+              url
+            }
+          },
+          "slug": "/" + slug,
+          "date": date,
+          "demo": demo,
+          "git": git,
+          article {
+            articleSections[] {
+              blogTitle,
+              bodyPortableText,
+              "blogPic": blogPic.asset->url
+            }
           }
-        },
-        "slug": "/" + slug,
-        "date": date,
-        "demo": demo,
-        "git": git,
-        "blogtitle1": blogtitle1,
-        "blogtext1": blogtext1,
-        "blogpic1": blogpic1.asset->url,
-        "blogtitle2": blogtitle2,
-        "blogtext2": blogtext2,
-        "blogpic2": blogpic2.asset->url,
-        "blogtitle3": blogtitle3,
-        "blogtext3": blogtext3,
-        "blogpic3": blogpic3.asset->url,
-        "blogtitle4": blogtitle4,
-        "blogtext4": blogtext4,
-        "blogpic4": blogpic4.asset->url,
-      }`,
+        }`,
       { id }
     );
 
@@ -79,10 +74,56 @@ export const getProjectById = async (id: string) => {
   }
 };
 
+// articleSections[] {
+//   blogTitle,
+//   body,
+//   "blogPic": blogPic.asset->url
+// },
+
+// export const getProjectById = async (id: string) => {
+//   try {
+//     const data = await client.fetch(
+//       `*[_type == "project" && slug == $id][0] {
+//         "thumbnail": thumbnail.asset->url,
+//         title,
+//         "category": category,
+//         "description": description,
+//         "tech": tech[]->tech,
+//         images[] {
+//           asset-> {
+//             url
+//           }
+//         },
+//         "slug": "/" + slug,
+//         "date": date,
+//         "demo": demo,
+//         "git": git,
+//         "blogtitle1": blogtitle1,
+//         "blogtext1": blogtext1,
+//         "blogpic1": blogpic1.asset->url,
+//         "blogtitle2": blogtitle2,
+//         "blogtext2": blogtext2,
+//         "blogpic2": blogpic2.asset->url,
+//         "blogtitle3": blogtitle3,
+//         "blogtext3": blogtext3,
+//         "blogpic3": blogpic3.asset->url,
+//         "blogtitle4": blogtitle4,
+//         "blogtext4": blogtext4,
+//         "blogpic4": blogpic4.asset->url,
+//       }`,
+//       { id }
+//     );
+
+//     return data;
+//   } catch (error) {
+//     throw new Error(error);
+//   }
+// };
+
 export const getProjectList = async () => {
   try {
     const data = await client.fetch(
-      `*[_type == "project"] {
+      `*[_type == "projectdata"] {
         title,
         category,
         "tech": tech[]->tech,
@@ -90,6 +131,7 @@ export const getProjectList = async () => {
         "demo": demo,
         "git": git,
         "slug": "/" + slug,
+        
       }`
     );
 
