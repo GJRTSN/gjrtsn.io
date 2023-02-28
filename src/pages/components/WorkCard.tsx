@@ -19,6 +19,10 @@ const WorkCard: FC<WorkCardProps> = ({
         flip ? "md:flex-row-reverse" : "md:flex-row"
       }`}
     >
+      <div
+        id="shade"
+        className="absolute inset-0 bg-black opacity-20  transition-opacity duration-500 group-hover:opacity-0 mobile:opacity-0"
+      ></div>
       <div className="relative h-full w-full md:w-1/2 mb-8 md:mb-0 mobile:hidden">
         <div className="relative h-full">
           <Image
@@ -29,7 +33,7 @@ const WorkCard: FC<WorkCardProps> = ({
           />
           <div
             id="shade"
-            className="absolute inset-0 bg-black opacity-50 transition-opacity duration-500 group-hover:opacity-0"
+            className="absolute inset-0 bg-black opacity-30 transition-opacity duration-500 group-hover:opacity-0"
           ></div>
         </div>
       </div>
