@@ -15,6 +15,7 @@ module.exports = {
         welcome:
           "url('https://images.unsplash.com/photo-1536859355448-76f92ebdc33d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80')",
       },
+      visibility: ["hover"],
     },
     screens: {
       "2xl": { max: "1535px" },
