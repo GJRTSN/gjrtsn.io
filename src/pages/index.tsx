@@ -205,7 +205,6 @@ const HomePage = () => {
       <Head>
         <title>Jostein Gjertsen</title>
         <meta name="description" content="Front-end utvikler bosatt i Oslo." />
-        <meta property="og:title" content="Front-end utvikler bosatt i Oslo." />
 
         <meta
           property="og:image"
