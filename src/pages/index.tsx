@@ -138,7 +138,8 @@ const WorkSection = () => {
           </h1>
         </Link>
         <p className="text-lg">
-          Her er noe av mitt arbeid jeg ønsker å fremheve.
+          Her er noe av mitt arbeid jeg har utført eller bidratt i. Trykk på
+          knappen nederst for å se alt.
         </p>
 
         <div className="flex flex-wrap justify-center z-0 h-full">
