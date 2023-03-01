@@ -107,26 +107,31 @@ const ProjectPage = ({ project }: Project) => {
             ) : (
               <CgUnavailable className="text-gray-700 mobile:mt-4" size={36} />
             )}
-
-            <Link href={git}>
-              <FaGithub
-                className="hover:text-rose-500 transition duration-300 ease-in-out mobile:mt-4"
-                size={28}
-              />
-            </Link>
+            {git ? (
+              <Link href={git}>
+                <FaGithub
+                  className="hover:text-rose-500 transition duration-300 ease-in-out mobile:mt-4"
+                  size={28}
+                />
+              </Link>
+            ) : (
+              <CgUnavailable className="text-gray-700 mobile:mt-4" size={36} />
+            )}
           </div>
-          <div id="article" className="mt-24">
+          <div id="article" className="mt-24 ">
             {articleSections &&
               articleSections.map((section: any, index: number) => (
                 <div key={index}>
-                  <h2 className="text-2xl font-bold  mobile:px-4">
+                  <h2 className="text-2xl font-bold px-4">
                     {section.blogTitle}
                   </h2>
                   <PortableText
-                    className="my-4 mobile:px-4"
+                    className="my-4 px-4"
                     content={section.bodyPortableText}
                   />
-                  <img src={section.blogPic} alt="" className="my-8 " />
+                  <div className="flex justify-center">
+                    <img src={section.blogPic} alt="" className="my-8" />
+                  </div>
                 </div>
               ))}
           </div>
