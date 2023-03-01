@@ -59,13 +59,13 @@ const WorkCard: FC<WorkCardProps> = ({
             </button>
           </Link>
         </div>
-        <p
+        {/* <p
           className={`absolute mobile:hidden ${
             flip ? "top-0 left-1/3 ml-14 mt-4" : "top-0 right-0 m-4"
           } px-1 text-gray-400 border-gray-300 border-solid border-2 rounded-md text-sm font-konit`}
         >
           {category ? category.toUpperCase() : "KATEGORI"}
-        </p>
+        </p> */}
       </div>
     </div>
   );
