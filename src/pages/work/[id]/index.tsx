@@ -13,6 +13,7 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 import { CgUnavailable } from "react-icons/cg";
 import Image from "next/image";
 import PortableText from "react-portable-text";
+import Head from "next/head";
 
 const ProjectPage = ({ project }: Project) => {
   const router = useRouter();
@@ -38,6 +39,16 @@ const ProjectPage = ({ project }: Project) => {
 
   return (
     <div>
+      <Head>
+        <title>Jostein Gjertsen</title>
+        <meta
+          property="og:image"
+          content="https://cdn.sanity.io/images/4jvb58kl/production/84742adb5d084f2b751c93a6fea3f1a665e6d2f2-1280x720.webp"
+        />
+        <meta property="og:url" content="https://www.gjrtsn.io/" />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://www.gjrtsn.io/" />
+      </Head>
       <Navigation />
 
       <section id="workPage" className=" bg-gray-800 min-h-screen pb-32">
