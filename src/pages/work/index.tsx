@@ -106,12 +106,16 @@ const Archive = () => {
                     ) : (
                       <CgUnavailable className="text-gray-700" size={28} />
                     )}
-                    <Link href={project.git}>
-                      <FaGithub
-                        className="hover:text-rose-500 transition duration-300 ease-in-out mobile:h-5 "
-                        size={28}
-                      />
-                    </Link>
+                    {project.git ? (
+                      <Link href={project.git}>
+                        <FaGithub
+                          className="hover:text-rose-500 transition duration-300 ease-in-out mobile:h-5 "
+                          size={28}
+                        />
+                      </Link>
+                    ) : (
+                      <CgUnavailable className="text-gray-700" size={28} />
+                    )}
                   </td>
                   {/* <td className="py-2 flex justify-center mobile:hidden">
                     <Link href={project.git}>
