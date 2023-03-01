@@ -181,10 +181,16 @@ const ContactSection = () => {
           <AiOutlineMessage className="mt-1" size={32} />
         </div>
         <div className="flex justify-center items-center space-x-4">
-          <Link href="https://linkedin.com/in/gjrtsn">
+          <Link
+            href="https://linkedin.com/in/gjrtsn"
+            className="inline-block transition-all duration-200 ease-in-out transform hover:-translate-y-1 hover:text-blue-500"
+          >
             <FaLinkedin size={64} />
           </Link>
-          <Link href="mailto:josteingjertsen@gmail.com">
+          <Link
+            href="mailto:josteingjertsen@gmail.com"
+            className="inline-block transition-all duration-200 ease-in-out transform hover:-translate-y-1 hover:text-green-300"
+          >
             <FaEnvelope size={64} />
           </Link>
         </div>
