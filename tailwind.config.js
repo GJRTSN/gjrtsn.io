@@ -21,6 +21,7 @@ module.exports = {
       "2xl": { max: "1535px" },
       xl: { max: "1279px" },
       mobile: { max: "1023px" },
+      custom1: { max: "1210px" },
       md: { min: "1023px" },
       sm: { max: "639px" },
     },

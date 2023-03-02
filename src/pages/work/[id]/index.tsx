@@ -87,7 +87,7 @@ const ProjectPage = ({ project }: Project) => {
           </h1>
           <div
             id="projectInfo"
-            className="flex justify-between bg-slate-700 px-2  py-1 rounded-md mobile:flex-col text-center items-center gap-4"
+            className="flex justify-between bg-slate-700 px-2  py-2 rounded-md mobile:flex-col  mobile:bg-transparent  custom1:flex-col text-center items-center gap-2 custom1:bg-transparent mobile:gap-0"
           >
             <h2 className="font-bold">Kategori:</h2>
             <p className=" text-gray-300 mobile:mb-4">
@@ -112,7 +112,7 @@ const ProjectPage = ({ project }: Project) => {
                 <div className="group">
                   <CgUnavailable
                     className=" text-gray-800 mobile:mt-4"
-                    size={36}
+                    size={28}
                   />
                   <span className=" absolute top-0 right-full bg-gray-100 text-gray-700 p-2 rounded-md shadow-lg opacity-0 transition duration-300 ease-in-out group-hover:opacity-100">
                     Ingen demo tilgjengelig
@@ -132,7 +132,7 @@ const ProjectPage = ({ project }: Project) => {
                 <div className="group">
                   <CgUnavailable
                     className=" text-gray-800 mobile:mt-4"
-                    size={36}
+                    size={28}
                   />
                   <span className=" absolute top-0 right-full bg-gray-100 text-gray-700 p-2 rounded-md shadow-lg opacity-0 transition duration-300 ease-in-out group-hover:opacity-100">
                     Ingen GitHub-repo tilgjengelig
