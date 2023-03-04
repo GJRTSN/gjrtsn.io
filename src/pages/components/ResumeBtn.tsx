@@ -10,7 +10,7 @@ const ResumeBtn = () => {
       .catch((error) => console.error("Error retrieving file", error));
   }, []);
 
-  const handleDownload = (url, filename) => {
+  const handleDownload = (url: string, filename: string) => {
     const link = document.createElement("a");
     link.href = url;
     link.setAttribute("download", filename);
@@ -18,14 +18,11 @@ const ResumeBtn = () => {
     link.setAttribute("rel", "noopener noreferrer");
 
     document.body.appendChild(link);
-
     link.click();
-
     document.body.removeChild(link);
   };
 
   const handleButtonClick = () => {
-    console.log(fileUrl);
     if (fileUrl) {
       handleDownload(fileUrl, "my-cv.pdf");
     }

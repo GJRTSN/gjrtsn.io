@@ -8,5 +8,10 @@ export default {
       type: 'string',
       title: 'Teknologi',
     },
+    // {
+    //   title: 'Icon',
+    //   name: 'techicon',
+    //   type: 'image',
+    // },
   ],
 }

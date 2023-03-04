@@ -7,7 +7,6 @@ import WorkCard from "./components/WorkCard";
 import { useEffect, useState } from "react";
 import { getProjects } from "../lib/services/workService";
 import { AiOutlineMessage, AiFillDownCircle } from "react-icons/ai";
-import { project } from "../types/types";
 import { Link as ScrollLink } from "react-scroll";
 
 const WelcomeSection = () => {
