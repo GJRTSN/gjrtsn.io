@@ -25,8 +25,8 @@ const WelcomeSection = () => {
           Jostein Gjertsen
         </h1>
         <p className="text-lg">
-          Hei! Jeg er en student som går siste semester på en bachelorgrad i
-          Digitale medier og design.
+          Hei! Jeg studerer Digitale medier og design på Høgskolen i Østfold og
+          vil begynne å jobbe som front-end utvikler.
         </p>
         <p className="text-lg">
           Denne siden er en introduksjon av meg og mitt arbeid, bla nedover for
@@ -72,8 +72,8 @@ const AboutSection = () => {
           <div className="flex flex-col">
             <p className="mobile:w-full">
               Jeg kommer opprinnelig fra Tønsberg, men bor for øyeblikket i
-              Halden i forbindelse med utdanning. Jeg går siste semester på en
-              IT-relatert bachelorgrad som jeg tar på Høgskolen i Østfold.
+              Halden grunnet studiet. Jeg går siste semester på en IT-relatert
+              bachelorgrad på Høgskolen i Østfold.
             </p>
             <p className="mt-4 mobile:w-full">
               Studiet har hatt fokus på blant annet webutikling,
@@ -98,16 +98,6 @@ const AboutSection = () => {
               </Link>
             </div>
           </div>
-
-          {/* <div className="w-2/5 min-h-64 mobile:hidden">
-            <Image
-              className="shadow-2xl "
-              src="https://media.licdn.com/dms/image/C4D03AQFSXygKgD6kbA/profile-displayphoto-shrink_800_800/0/1596528788276?e=1682553600&v=beta&t=C9OmWsGh9VYr1t6_psD4Z69seAba7KNmDg29cqlOIww"
-              alt=""
-              width={1000}
-              height={1000}
-            />
-          </div> */}
         </div>
       </div>
     </section>
@@ -139,10 +129,6 @@ const WorkSection = () => {
         <p className="text-lg">
           Her er noe av mitt arbeid jeg har utført eller bidratt i.
         </p>
-        <p className="text-sm italic text-gray-300 mb-8">
-          Trykk på tittelen eller knappen nederst for å se alt.
-        </p>
-
         <div className="flex flex-wrap justify-center z-0 h-full">
           {works.map((work, index) => (
             <WorkCard
@@ -156,7 +142,7 @@ const WorkSection = () => {
         <div className="text-center">
           <Link href="/work">
             <button className="my-10 bg-rose-500 hover:bg-pink-600 text-white py-4 px-10 rounded-md transition duration-300 ease-in-out  hover:shadow-2xl">
-              <p className="font-bold">Arkiv</p>
+              <p className="font-bold">Se mer</p>
             </button>
           </Link>
         </div>
