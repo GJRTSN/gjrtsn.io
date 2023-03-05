@@ -166,7 +166,6 @@ const ContactSection = () => {
       >
         <div className="flex justify-center space-x-4">
           <h1 className="text-4xl font-bold mb-16">Ta kontakt!</h1>
-          <AiOutlineMessage className="mt-1" size={32} />
         </div>
         <div className="flex justify-center items-center space-x-4">
           <Link
