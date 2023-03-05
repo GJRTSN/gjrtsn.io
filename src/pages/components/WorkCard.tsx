@@ -30,7 +30,7 @@ const WorkCard: FC<WorkCardProps> = ({
           />
           <div
             id="shade"
-            className={`absolute  inset-0 bg-black opacity-30 transition-opacity duration-500 group-hover:opacity-0"${
+            className={`absolute  inset-0 bg-black opacity-30 transition-opacity duration-500 group-hover:opacity-0 ${
               flip ? "rounded-r-lg" : "rounded-l-lg"
             }`}
           ></div>
